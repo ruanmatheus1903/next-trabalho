@@ -1,0 +1,200 @@
+[
+  {
+    "path": "/components/AccessibilityButton",
+    "title": "AccessibilityButton",
+    "description": "Conteúdo sobre AccessibilityButton",
+    "content": ""
+  },
+  {
+    "path": "/components/Footer",
+    "title": "Footer",
+    "description": "Conteúdo sobre Footer",
+    "content": "MAPA DO SITE MAPA DA ESTRATÉGIA PORTAL DA TRANSPARÊNCIA ESTRUTURA ORGANIZACIONAL GALERIA DE ELOGIOS CIDADÃO CARTAS DE SERVIÇO EMPRESA SERVIDOR TURISTA PPP-SAUDE MAPA DAS ESCOLAS MUNICIPAIS MAPA DAS UNIDADES DE SAÚDE POR REGIONAIS MAPA DOS BARES E RESTAURANTES MAPA DOS MERCADOS PÚBLICOS MAPA DAS UNIDADES DO CRAS E CREAS MUNICIPAIS SITES RELACIONADOS AMOR JABOATÃO BEM ESTAR ANIMAL CONSELHO DE USUÁRIOS DE OLHO NA CONSULTA DIÁRIO OFICIAL EDUCAÇÃO ECONOMIA CRIATIVA EMLUME ESTAÇÃO BEM ESTAR JABOATÃO EM AÇÃO JABOATAOPREV MEIO AMBIENTE OFICIAL OUVIDORIA PORTAL DO CONTRIBUINTE PORTAL DA TRANSPARÊNCIA PROCON SERVIDOR TRABALHO VIVER OUVIDORIA OUVIDORIA GERAL: 0800 081 8999 /  81  9.9422-5177 ATENDIMENTO DE SEGUNDA A SEXTA-FEIRA, DAS 8H ÀS 14H E-MAIL: ouvidoria@jaboatao.pe.gov.br ACESSIBILIDADE INFORMAÇÕES NAVEGABILIDADE GLOSSÁRIO ACOMPANHE-NOS Palácio da Batalha Av. Barreto de Menezes, 1648 – Prazeres Jaboatão dos Guararapes – PE, CEP 54.310-310 Complexo Administrativo Estr. da Batalha, 1200 – Jardim Jordão Jaboatão dos Guararapes – PE, CEP 54315-570 Desenvolvido por: Secretaria Executiva de Governo Digital | SEGD"
+  },
+  {
+    "path": "/components/Home/Atendimento",
+    "title": "Atendimento",
+    "description": "Conteúdo sobre Atendimento",
+    "content": "ATENDIMENTO EMLUME81 3462-804681 3462-8776ATENDIMENTO WHATSAPP81 99232-5280"
+  },
+  {
+    "path": "/components/Home/Faleconosco",
+    "title": "Faleconosco",
+    "description": "Conteúdo sobre Faleconosco",
+    "content": "FALE CONOSCOFale Conosco Qualquer dúvida, reclamação ou sugestão entre em contato com a nossa área de relacionamento com o cidadão. Queremos nos aproximar cada vez mais de você cidadão."
+  },
+  {
+    "path": "/components/Home/Section1",
+    "title": "Section1",
+    "description": "Conteúdo sobre Section1",
+    "content": "SECRETARIA DE DESENVOLVIMENTO ECONÔMICO E TURISMO"
+  },
+  {
+    "path": "/components/Home/Section2",
+    "title": "Section2",
+    "description": "Conteúdo sobre Section2",
+    "content": "DADOS DO MUNICÍPIO DADOS DO MUNICÍPIO O MELHOR LUGAR PARA INVESTIR JABOATÃOINVEST INCENTIVOS E BENEFÍCIOS FISCAIS INCENTIVOS E BENEFÍCIOS FISCAIS ZPE ZPE AGENDE AQUI O SERVIÇO DO INSS QUE VOCÊ PRECISA INSS DIGITAL PLANO DIRETOR PLANO DIRETOR"
+  },
+  {
+    "path": "/components/model-page",
+    "title": "Model Page",
+    "description": "Conteúdo sobre Model Page",
+    "content": "titulo   subtitulo"
+  },
+  {
+    "path": "/components/Navbar",
+    "title": "Navbar",
+    "description": "Conteúdo sobre Navbar",
+    "content": ""
+  },
+  {
+    "path": "/components/Noticias",
+    "title": "Noticias",
+    "description": "Conteúdo sobre Noticias",
+    "content": "loading ?   Carregando...   :       posts.map  post  =     post.categories.map  catId  =     categories[catId]       post.title.rendered  📅  new Date post.date .toLocaleDateString \"pt-BR\"        /* Linha de fundo exatamente no meio da paginação */   /* Números das páginas */   [...Array totalPages ].map  _, i  =    const pageNumber = i + 1; if   pageNumber === 1 || pageNumber === 2 || pageNumber === totalPages || pageNumber === page || pageNumber === page - 1 || pageNumber === page + 1     return   setPage pageNumber   className= `px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base $  page === pageNumber ? \"bg-blue-700 text-white font-bold\" : \"bg-gray-300 text-black hover:bg-gray-400\"  `     pageNumber   ;   if  pageNumber === page - 2 || pageNumber === page + 2    return   ...  ;   return null;      /* Botão Próxima */  setPage  prev  =  Math.min prev + 1, totalPages     disabled= page === totalPages  className= `px-3 py-1 sm:px-4 sm:py-2 rounded-lg font-bold text-sm sm:text-base $  page === totalPages ? \"bg-gray-200 text-gray-500 cursor-not-allowed\" : \"bg-green-700 text-white hover:bg-green-800\"  `    Próxima  /* Botão -10 páginas */  setPage  prev  =  Math.max prev - 10, 1    disabled= page  = 10  className= `px-3 py-1 sm:px-4 sm:py-2 rounded-lg font-bold text-sm sm:text-base $  page  = 10 ? \"bg-gray-200 text-gray-500 cursor-not-allowed\" : \"bg-yellow-500 text-black hover:bg-yellow-600\"  `    -10  /* Botão +10 páginas */  setPage  prev  =  Math.min prev + 10, totalPages     disabled= page  = totalPages - 10  className= `px-3 py-1 sm:px-4 sm:py-2 rounded-lg font-bold text-sm sm:text-base $  page  = totalPages - 10 ? \"bg-gray-200 text-gray-500 cursor-not-allowed\" : \"bg-yellow-500 text-black hover:bg-yellow-600\"  `    +10  /* Botão Final */  setPage totalPages   disabled= page === totalPages  className= `px-3 py-1 sm:px-4 sm:py-2 rounded-lg font-bold text-sm sm:text-base $  page === totalPages ? \"bg-gray-200 text-gray-500 cursor-not-allowed\" : \"bg-blue-700 text-white hover:bg-blue-500\"  `    Final    Carregando...  post.title.rendered  📅  new Date post.date .toLocaleDateString \"pt-BR\""
+  },
+  {
+    "path": "/components/ScrollToTop",
+    "title": "ScrollToTop",
+    "description": "Conteúdo sobre ScrollToTop",
+    "content": ""
+  },
+  {
+    "path": "/components/Search",
+    "title": "Search",
+    "description": "Conteúdo sobre Search",
+    "content": "isLoading ? 'Buscando...' : filteredRoutes.length   0 ? `Resultados para \"$ searchTerm \"` : `Nenhum resultado para \"$ searchTerm \"`   isLoading ?     : filteredRoutes.length === 0 ?   Sugestões: Verifique a ortografia Use palavras mais genéricas Tente termos diferentes   :    filteredRoutes.map  route  =            isLoading ? 'Buscando...' : filteredRoutes.length   0 ? `Resultados para \"$ searchTerm \"` : `Nenhum resultado para \"$ searchTerm \"`  Sugestões:Verifique a ortografiaUse palavras mais genéricasTente termos diferentes"
+  },
+  {
+    "path": "/components/Vlibras",
+    "title": "Vlibras",
+    "description": "Conteúdo sobre Vlibras",
+    "content": ""
+  },
+  {
+    "path": "/contato/contato-secretarias",
+    "title": "Contato Secretarias",
+    "description": "Conteúdo sobre Contato Secretarias",
+    "content": "Contato das Secretarias Municipais  secretaria.titulo  Telefone: \" \"   secretaria.telefone1  Telefone: \" \"   secretaria.telefone2  E-mail: \" \"    e.preventDefault  ; handleEmailClick secretaria.email! ;       secretaria.email"
+  },
+  {
+    "path": "/contato/solicitacao-de-agendamento-de-visita",
+    "title": "Solicitacao De Agendamento De Visita",
+    "description": "Conteúdo sobre Solicitacao De Agendamento De Visita",
+    "content": ""
+  },
+  {
+    "path": "/emlume/regulamento-de-licitacoes-emlume",
+    "title": "Regulamento De Licitacoes Emlume",
+    "description": "Conteúdo sobre Regulamento De Licitacoes Emlume",
+    "content": "O CALENDÁRIO publicado está em formato PDF. Caso não consiga abrir o arquivo, \" \"  clique AQUI  \" \"  para fazer o download do arquivo em PDF."
+  },
+  {
+    "path": "/gestao-urbana-e-meio-ambiente/legislacao-ambiental",
+    "title": "Legislacao Ambiental",
+    "description": "Conteúdo sobre Legislacao Ambiental",
+    "content": "/* ÁREA COM GRADIENTE DE FUNDO */  DECRETO 87-2014 - LICENCIAMENTO DECRETO 87-2014 - LICENCIAMENTO"
+  },
+  {
+    "path": "/gestao-urbana-e-meio-ambiente/legislacao-urbanistica",
+    "title": "Legislacao Urbanistica",
+    "description": "Conteúdo sobre Legislacao Urbanistica",
+    "content": "/* ÁREA COM GRADIENTE DE FUNDO */   /* Primeira coluna - alinhada à direita */  DECRETO 109-2015 - PROCESSOS ADMINISTRATIVOS LEI 1354-2018 - HABITAÇÃO UNIFAMILIAR LEI 1356-2018 - HABITAÇÃO SOCIAL LEI 1360-2018 - INFRAÇÕES URBANAS LEI LUOS - 972 - ALTERAÇÃO - COMPILADA - R.05 MINUTA DE PORTARIA CONJUNTA SEDES SEFAZ 01-2018  /* Segunda coluna - alinhada à esquerda */  DECRETO 128-2017 - ORLA LEI 1355-2018 - ANTENAS LEI 1359-2018 - INFRAÇÕES AMBIENTAIS LEI 1361-2018 - ALTERAÇÃO LUOS LEIS 972/13 e 973/13 PLANO DIRETOR COMPLETO E ANEXOS CORRETOS 2008  /* Terceira coluna - centralizada */  LEI 934-2013 PUBLICIDADE DECRETO 109-2015 - PROCESSOS ADMINISTRATIVOS LEI 1354-2018 - HABITAÇÃO UNIFAMILIAR LEI 1356-2018 - HABITAÇÃO SOCIAL LEI 1360-2018 - INFRAÇÕES URBANAS LEI LUOS - 972 - ALTERAÇÃO - COMPILADA - R.05 MINUTA DE PORTARIA CONJUNTA SEDES SEFAZ 01-2018 DECRETO 128-2017 - ORLA LEI 1355-2018 - ANTENAS LEI 1359-2018 - INFRAÇÕES AMBIENTAIS LEI 1361-2018 - ALTERAÇÃO LUOS LEIS 972/13 e 973/13 PLANO DIRETOR COMPLETO E ANEXOS CORRETOS 2008 LEI 934-2013 PUBLICIDADE"
+  },
+  {
+    "path": "/gestao-urbana-e-meio-ambiente/plano-diretor",
+    "title": "Plano Diretor",
+    "description": "Conteúdo sobre Plano Diretor",
+    "content": ""
+  },
+  {
+    "path": "/gestao-urbana-e-meio-ambiente/telefones-para-atendimento",
+    "title": "Telefones Para Atendimento",
+    "description": "Conteúdo sobre Telefones Para Atendimento",
+    "content": ""
+  },
+  {
+    "path": "/informativo/compras-governamentais",
+    "title": "Compras Governamentais",
+    "description": "Conteúdo sobre Compras Governamentais",
+    "content": "/* ÁREA COM GRADIENTE DE FUNDO */  COMPRAS GOVERNAMENTAIS O Mercado de compras públicas deve ser considerado como uma grande oportunidade que os proprietários de pequenos negócios possam alavancar as suas vendas. Por outro lado, sabe-se que participar de um processo licitatório não é muito fácil, bem como não se aprende do dia para a noite. Estar capacitado para aproveitar essa oportunidade é essencial para produzir ou mesmo evitar contratempos na gestão do estabelecimento comercial. Capacitar os pequenos negócios para a participação nos processos licitatórios é mais uma atividade desenvolvida através do Projeto de Compras Governamentais. O plano de compras de governo, desenvolve uma política preferencial para as pequenas e microempresas e é o caminho para a promoção do desenvolvimento local e qualificação das empresas de pequeno porte. Com o intuito, de tornar esta política uma prática cotidiana nas suas aquisições. COMPRAS GOVERNAMENTAIS O Mercado de compras públicas deve ser considerado como uma grande oportunidade que os proprietários de pequenos negócios possam alavancar as suas vendas. Por outro lado, sabe-se que participar de um processo licitatório não é muito fácil, bem como não se aprende do dia para a noite. Estar capacitado para aproveitar essa oportunidade é essencial para produzir ou mesmo evitar contratempos na gestão do estabelecimento comercial. Capacitar os pequenos negócios para a participação nos processos licitatórios é mais uma atividade desenvolvida através do Projeto de Compras Governamentais. O plano de compras de governo, desenvolve uma política preferencial para as pequenas e microempresas e é o caminho para a promoção do desenvolvimento local e qualificação das empresas de pequeno porte. Com o intuito, de tornar esta política uma prática cotidiana nas suas aquisições."
+  },
+  {
+    "path": "/informativo/dados-do-municipio",
+    "title": "Dados Do Municipio",
+    "description": "Conteúdo sobre Dados Do Municipio",
+    "content": "/* ÁREA COM GRADIENTE DE FUNDO */   /* Gradiente de fundo */  Com um amplo território de 256km², a cidade do Jaboatão dos Guararapes faz parte de uma localização estratégica e privilegiada de estar situada entre as principais vias de acesso ao Estado de Pernambuco, uma vez localizada justamente entre os portos de Recife e Suape, além de ficar muito próximo ao aeroporto internacional e ainda ser cortada por duas rodovias federais. Por essa localização estratégica é que Jaboatão foi naturalmente escolhido pelo empresariado para ser o Polo Logístico de Pernambuco, abrigando os principais centros de distribuição, operadores logísticos e transportes como: Wal-Mart, Honda, Coca Cola, Campari, Martins, Pão de Açúcar, Rapidão Cometa, dentre outros. Vale ressaltar a proximidade com o Complexo Industrial e Portuário de Suape  aproximadamente 15km² , que está a apenas sete dias de Roterdã e Nova York e conectado a 160 portos em todos os continentes. Apto a se tornar o principal porto concentrador de cargas do Atlântico Sul, Suape tem atraído investimentos estruturadores como refinaria de petróleo, polo petroquímico e vários estaleiros.  /* Botão de rolagem suave */  Com um amplo território de 256km², a cidade do Jaboatão dos Guararapes faz parte de uma localização estratégica e privilegiada de estar situada entre as principais vias de acesso ao Estado de Pernambuco, uma vez localizada justamente entre os portos de Recife e Suape, além de ficar muito próximo ao aeroporto internacional e ainda ser cortada por duas rodovias federais. Por essa localização estratégica é que Jaboatão foi naturalmente escolhido pelo empresariado para ser o Polo Logístico de Pernambuco, abrigando os principais centros de distribuição, operadores logísticos e transportes como: Wal-Mart, Honda, Coca Cola, Campari, Martins, Pão de Açúcar, Rapidão Cometa, dentre outros. Vale ressaltar a proximidade com o Complexo Industrial e Portuário de Suape  aproximadamente 15km² , que está a apenas sete dias de Roterdã e Nova York e conectado a 160 portos em todos os continentes. Apto a se tornar o principal porto concentrador de cargas do Atlântico Sul, Suape tem atraído investimentos estruturadores como refinaria de petróleo, polo petroquímico e vários estaleiros. NÚMEROS DO JABOATÃO  /* Coluna da esquerda */   areNumbersVisible &&   AMPLO TERRITÓRIO  /* Coluna do meio  POPULAÇÃO  */   areNumbersVisible &&   POPULAÇÃO  /* Coluna da direita  PIB  */   areNumbersVisible &&   PIB  /* Lista de características */   [ \"LOCALIZAÇÃO ESTRATÉGICA\", \"INTEGRANTE DO TERRITÓRIO ESTRATÉGICO DE SUAPE\", \"ZPE  ZONA DE PROCESSAMENTO E EXPORTAÇÃO \", \"MELHOR POLO LOGÍSTICO DE PERNAMBUCO\", \"DISPONIBILIDADE DE GRANDE ÁREA PARA PROJETOS HABITACIONAIS\" ].map  item, index  =    –  item      NÚMEROS DO JABOATÃO"
+  },
+  {
+    "path": "/informativo/downloads",
+    "title": "Downloads",
+    "description": "Conteúdo sobre Downloads",
+    "content": "DOWNLOADS APRESENTAÇÃO EM POWERPOINT APRESENTAÇÃO EM POWERPOINT Faça aqui o download do arquivo em PPT VÍDEO INSTITUCIONAL VÍDEO INSTITUCIONAL Clique para assistir LEGISLAÇÃO LEGISLAÇÃO Conheça as leis de incentivos e benefícios fiscais."
+  },
+  {
+    "path": "/informativo/downloads/video-institucional",
+    "title": "Video Institucional",
+    "description": "Conteúdo sobre Video Institucional",
+    "content": ""
+  },
+  {
+    "path": "/informativo/incentivo-fiscais",
+    "title": "Incentivo Fiscais",
+    "description": "Conteúdo sobre Incentivo Fiscais",
+    "content": "BENEFÍCIOS FISCAIS A Lei Nº81 de março de 2006, regulamentada pelo decreto nº111/2009 tem por finalidade regulamentar a concessão de incentivos fiscais, com intuito de oferecer ou emprestando um instrumento capaz de aumentar sua capacidade de competição e assegurar a geração de emprego e renda ao município do Jaboatão dos Guararapes. Os benefícios desta lei serão concedidos às novas empresas e as que já estão estabelecidas no município, as empresas estabelecidas que necessitam se ampliar e se refocalizar. CARACTERIZAÇÃO DA EMPRESA Documentações e informações básicas necessárias básicos para análise dos pleitos de habilitação ao gozo dos benefícios desta lei. Racial Social: CNPJ: JUCEPE: SETOR DA ATIVIDADE ECONÔMICA: OBJETIVO SOCIAL: CAPITAL SOCIAL: ADMINISTRAÇÃO E CONTROLE: EVOLUÇÃO DO CAPITAL: PROJETO: PLETIO: CARACTERÍSTICAS DO EMPREENDIMENTO. Clique AQUI para fazer o download da Lei Nº 81 de 28 de março de 2006. BENEFÍCIOS FISCAIS A Lei Nº81 de março de 2006, regulamentada pelo decreto nº111/2009 tem por finalidade regulamentar a concessão de incentivos fiscais, com intuito de oferecer ou emprestando um instrumento capaz de aumentar sua capacidade de competição e assegurar a geração de emprego e renda ao município do Jaboatão dos Guararapes. Os benefícios desta lei serão concedidos às novas empresas e as que já estão estabelecidas no município, as empresas estabelecidas que necessitam se ampliar e se refocalizar. CARACTERIZAÇÃO DA EMPRESA Documentações e informações básicas necessárias básicos para análise dos pleitos de habilitação ao gozo dos benefícios desta lei. Racial Social:CNPJ:JUCEPE:SETOR DA ATIVIDADE ECONÔMICA:OBJETIVO SOCIAL:CAPITAL SOCIAL:ADMINISTRAÇÃO E CONTROLE:EVOLUÇÃO DO CAPITAL:PROJETO:PLETIO:CARACTERÍSTICAS DO EMPREENDIMENTO. Clique AQUI para fazer o download da Lei Nº 81 de 28 de março de 2006."
+  },
+  {
+    "path": "/informativo/jaboatao-invest",
+    "title": "Jaboatao Invest",
+    "description": "Conteúdo sobre Jaboatao Invest",
+    "content": "O PROGRAMA Jaboatão Invest é um programa ligado à Secretaria Municipal de Desenvolvimento Econômico e Sustentabilidade que tem como principal objetivo atrair investimentos e desburocratizar os processos de licenciamento do município. No ano de 2017 e 2018, algumas ações importantes foram executadas pela Secretaria de Desenvolvimento Econômico e Sustentabilidade  SDES  que buscou articular, junto ao Ministério Público Federal e Estadual, a liberação de projetos imobiliários no município, liberando 27 projetos imobiliários na orla. O Jaboatão Invest foi lançado no Centro Cultural Miguel Arraes com a presença de empresários do ramo imobiliário e da construção civil, com o objetivo de aquecer o mercado de imóveis na cidade. A previsão é de um investimento acima de R$ 620 milhões e a expectativa do setor é de que sejam gerados 16 mil empregos diretos e indiretos. A decisão de liberar a construção de imóveis foi garantida por meio de estudo elaborado pela Agência Estadual do Meio Ambiente  CPRH  que, entre outros pontos, assegura a estabilidade da engorda da orla. Agora, os 27 projetos identificados no trecho entre a Rua São Sebastião, em Piedade, e a antiga Candelária, em Candeias, passam a receber o aval da prefeitura. Além de assinar o decreto, o prefeito firmou convênio com o Sindicato da Indústria da Construção Civil no Estado de Pernambuco  Sinduscon-PE  e Associação das Empresas do Mercado Imobiliário de Pernambuco  Ademi-PE  para cooperação na desburocratização de licenciamentos e retiradas de documentos, agilização dos serviços, treinamento de mão de obra especializada e questões relativas à infraestrutura. O PROGRAMA Jaboatão Invest é um programa ligado à Secretaria Municipal de Desenvolvimento Econômico e Sustentabilidade que tem como principal objetivo atrair investimentos e desburocratizar os processos de licenciamento do município. No ano de 2017 e 2018, algumas ações importantes foram executadas pela Secretaria de Desenvolvimento Econômico e Sustentabilidade  SDES  que buscou articular, junto ao Ministério Público Federal e Estadual, a liberação de projetos imobiliários no município, liberando 27 projetos imobiliários na orla. O Jaboatão Invest foi lançado no Centro Cultural Miguel Arraes com a presença de empresários do ramo imobiliário e da construção civil, com o objetivo de aquecer o mercado de imóveis na cidade. A previsão é de um investimento acima de R$ 620 milhões e a expectativa do setor é de que sejam gerados 16 mil empregos diretos e indiretos. A decisão de liberar a construção de imóveis foi garantida por meio de estudo elaborado pela Agência Estadual do Meio Ambiente  CPRH  que, entre outros pontos, assegura a estabilidade da engorda da orla. Agora, os 27 projetos identificados no trecho entre a Rua São Sebastião, em Piedade, e a antiga Candelária, em Candeias, passam a receber o aval da prefeitura. Além de assinar o decreto, o prefeito firmou convênio com o Sindicato da Indústria da Construção Civil no Estado de Pernambuco  Sinduscon-PE  e Associação das Empresas do Mercado Imobiliário de Pernambuco  Ademi-PE  para cooperação na desburocratização de licenciamentos e retiradas de documentos, agilização dos serviços, treinamento de mão de obra especializada e questões relativas à infraestrutura. ALGUMAS AÇÕES JÁ REALIZADAS NO LANÇAMENTO DO PROGRAMA: LIBERAÇÃO DE ÁREAS URBANAS PARA NOVOS EMPREENDIMENTOS MODERNIZAÇÃO DO SISTEMA DE LICENCIAMENTO CAPACITAÇÃO DAS EMPRESAS LOCAIS PARA O FORNECIMENTO DE BENS E SERVIÇOS INTERMEDIAÇÃO NA CONTRATAÇÃO/TREINAMENTO DE MÃO DE OBRA LOCAL INTERLOCUÇÃO COM AS CONCESSIONÁRIAS DE SERVIÇO PÚBLICO. ALÉM DE MAIS MOBILIDADE E SANEAMENTO ALGUMAS AÇÕES JÁ REALIZADAS NO LANÇAMENTO DO PROGRAMA:LIBERAÇÃO DE ÁREAS URBANAS PARA NOVOS EMPREENDIMENTOSMODERNIZAÇÃO DO SISTEMA DE LICENCIAMENTOCAPACITAÇÃO DAS EMPRESAS LOCAIS PARA O FORNECIMENTO DE BENS E SERVIÇOSINTERMEDIAÇÃO NA CONTRATAÇÃO/TREINAMENTO DE MÃO DE OBRA LOCALINTERLOCUÇÃO COM AS CONCESSIONÁRIAS DE SERVIÇO PÚBLICO. ALÉM DE MAIS MOBILIDADE E SANEAMENTO DIFERENCIAIS DO MUNICÍPIO Proximidade ao Mercado Consumidor Jaboatão dos Guararapes está imerso no maior mercado consumidor de Pernambuco e do Nordeste do Brasil. Possui 2º maior PIB e a 2ª maior população do Estado, ficando atrás apenas da capital, Recife, com quem forma uma mancha urbana única. Em um raio de 800 quilômetros, tem acesso a 90% do PIB do Nordeste. Mão de Obra Qualificada A população do Jaboatão dos Guararapes possui o melhor nível de escolaridade do território estratégico de Suape. Além disso, a população da capital e dos municípios vizinhos podem trabalhar em Jaboatão sem grandes dificuldades. A Agência do Trabalhador da cidade disponibiliza gratuitamente para as empresas e interessadas, um criterioso serviço de recrutamento e seleção de mão de obra, de acordo com o perfil solicitado. São mais de 30 mil profissionais inscritos. Disponibilidade de Terra e Água Jaboatão é cortado pela gigante adutora do sistema Pirapama, a maior obra hídrica da historia de Pernambuco, que tem capacidade para conduzir 5.130 litros/segundo de água. Outro fator relevante é que cerca de 40% de seu extenso território  256km2  ainda é rural, com possibilidades de novos usos. Logo, apesar da excelente localização, ainda é possível encontrar grandes áreas por preços baixos. Incentivos Fiscais Jaboatão dos Guararapes possui incentivos fiscais que proporcionam reduções consideráveis de IPTU e ISS. A cidade faz parte da área de abrangência do Programa de Desenvolvimento de Pernambuco  PRODEPE , que possibilita grande redução de ICMS. Além disso, por conta da SUDENE, há redução de 75% do Imposto de Renda sobre os lucros por 10 anos. DIFERENCIAIS DO MUNICÍPIOProximidade ao Mercado Consumidor Jaboatão dos Guararapes está imerso no maior mercado consumidor de Pernambuco e do Nordeste do Brasil. Possui 2º maior PIB e a 2ª maior população do Estado, ficando atrás apenas da capital, Recife, com quem forma uma mancha urbana única. Em um raio de 800 quilômetros, tem acesso a 90% do PIB do Nordeste. Mão de Obra Qualificada A população do Jaboatão dos Guararapes possui o melhor nível de escolaridade do território estratégico de Suape. Além disso, a população da capital e dos municípios vizinhos podem trabalhar em Jaboatão sem grandes dificuldades. A Agência do Trabalhador da cidade disponibiliza gratuitamente para as empresas e interessadas, um criterioso serviço de recrutamento e seleção de mão de obra, de acordo com o perfil solicitado. São mais de 30 mil profissionais inscritos. Disponibilidade de Terra e Água Jaboatão é cortado pela gigante adutora do sistema Pirapama, a maior obra hídrica da historia de Pernambuco, que tem capacidade para conduzir 5.130 litros/segundo de água. Outro fator relevante é que cerca de 40% de seu extenso território  256km2  ainda é rural, com possibilidades de novos usos. Logo, apesar da excelente localização, ainda é possível encontrar grandes áreas por preços baixos. Incentivos Fiscais Jaboatão dos Guararapes possui incentivos fiscais que proporcionam reduções consideráveis de IPTU e ISS. A cidade faz parte da área de abrangência do Programa de Desenvolvimento de Pernambuco  PRODEPE , que possibilita grande redução de ICMS. Além disso, por conta da SUDENE, há redução de 75% do Imposto de Renda sobre os lucros por 10 anos. DOWNLOAD APRESENTAÇÃO JABOATÃO INVEST VERSÃO EDITÁVEL Arquivo PPTX - 7,9 MB Baixar Apresentação DOWNLOAD APRESENTAÇÃO JABOATÃO INVEST VERSÃO EDITÁVEL Arquivo PPTX - 7,9 MB"
+  },
+  {
+    "path": "/informativo/rede-sim",
+    "title": "Rede Sim",
+    "description": "Conteúdo sobre Rede Sim",
+    "content": ""
+  },
+  {
+    "path": "/informativo/zpe",
+    "title": "Zpe",
+    "description": "Conteúdo sobre Zpe",
+    "content": ""
+  },
+  {
+    "path": "/inss-digital",
+    "title": "Inss Digital",
+    "description": "Conteúdo sobre Inss Digital",
+    "content": "A PREFEITURA DO JABOATÃO DOS GUARARAPES E O INSS OFERECEM MAIS ACESSIBILIDADE E CONFORTO NA SOLICITAÇÃO DE SERVIÇOS:  /* Botões */  AGENDAR AGORA DOCUMENTAÇÃO A PREFEITURA DO JABOATÃO DOS GUARARAPES E O INSS OFERECEM MAIS ACESSIBILIDADE E CONFORTO NA SOLICITAÇÃO DE SERVIÇOS:"
+  },
+  {
+    "path": "/institucional",
+    "title": "Institucional",
+    "description": "Conteúdo sobre Institucional",
+    "content": "A SEDES A função da SEDES é propiciar ao município do Jaboatão dos Guararapes um ambiente favorável aos empreendedores, investidores, visitantes e cidadãos, sendo um vetor de fortalecimento, inovação, expansão e crescimento econômico. Para tanto, suas atribuições compreendem: I - Planejar, formular, implementar, coordenar, fiscalizar, articular e controlar as políticas voltadas para as áreas do desenvolvimento econômico, industrial e comercial, com atuação no setor econômico; II - Coordenar e acompanhar os processos de licenciamento ambiental, urbano e de regularização fundiária de forma integrada; III - Desenvolver ações no setor de turismo, cultura, esportes e lazer; IV - Promover o desenvolvimento urbano envolvendo o controle e o uso do solo, a viabilidade e o impacto de obras e empreendimentos, a aplicação dos instrumentos de regulação do uso do solo e o licenciamento, a manutenção e a vistoria dos projetos de edificação; V - Acompanhar as demandas junto ao PROCON do município na finalidade de orientar o setor empresarial; VI - Gestão empresarial dos mercados e feiras públicas, acompanhamento e crescimento econômico dos espaços públicos do município. A SEDES A função da SEDES é propiciar ao município do Jaboatão dos Guararapes um ambiente favorável aos empreendedores, investidores, visitantes e cidadãos, sendo um vetor de fortalecimento, inovação, expansão e crescimento econômico. Para tanto, suas atribuições compreendem: I - Planejar, formular, implementar, coordenar, fiscalizar, articular e controlar as políticas voltadas para as áreas do desenvolvimento econômico, industrial e comercial, com atuação no setor econômico; II - Coordenar e acompanhar os processos de licenciamento ambiental, urbano e de regularização fundiária de forma integrada; III - Desenvolver ações no setor de turismo, cultura, esportes e lazer; IV - Promover o desenvolvimento urbano envolvendo o controle e o uso do solo, a viabilidade e o impacto de obras e empreendimentos, a aplicação dos instrumentos de regulação do uso do solo e o licenciamento, a manutenção e a vistoria dos projetos de edificação; V - Acompanhar as demandas junto ao PROCON do município na finalidade de orientar o setor empresarial; VI - Gestão empresarial dos mercados e feiras públicas, acompanhamento e crescimento econômico dos espaços públicos do município.  /* Coluna Esquerda - Missão, Visão e Valores */  A MISSÃO Tornar Jaboatão dos Guararapes um ambiente favorável a empreendedores, investidores, visitantes e cidadãos, sendo um vetor de fortalecimento, inovação, expansão e crescimento econômico. A VISÃO Promover o desenvolvimento econômico e sustentável do município de Jaboatão dos Guararapes. OS VALORES Ética, Transparência, Eficiência.  /* Coluna Direita - Organograma */  ORGANOGRAMA A MISSÃO Tornar Jaboatão dos Guararapes um ambiente favorável a empreendedores, investidores, visitantes e cidadãos, sendo um vetor de fortalecimento, inovação, expansão e crescimento econômico. A VISÃO Promover o desenvolvimento econômico e sustentável do município de Jaboatão dos Guararapes. OS VALORESÉtica, Transparência, Eficiência.ORGANOGRAMA"
+  },
+  {
+    "path": "/",
+    "title": "Home",
+    "description": "Conteúdo sobre Home",
+    "content": ""
+  },
+  {
+    "path": "/noticia/[id]",
+    "title": "Id",
+    "description": "Conteúdo sobre Id",
+    "content": "/* Imagem de fundo */   /* Gradiente com transparência ajustada */   /* Espaço reservado para empurrar o conteúdo para baixo sem alterar a imagem de fundo */   /* Imagem destacada e Título */   /* TÍTULO */   formattedDate   formattedTime   post.title.rendered   /* IMAGEM DESTAQUE RESPONSIVA */   post.featured_image_url &&    /* ou aspect-square */      /* Conteúdo da notícia */   post.title.rendered   formattedDate   formattedTime   post.title.rendered   post.title.rendered   formattedDate   formattedTime   post.title.rendered"
+  },
+  {
+    "path": "/sala-do-empreendedor",
+    "title": "Sala Do Empreendedor",
+    "description": "Conteúdo sobre Sala Do Empreendedor",
+    "content": ""
+  },
+  {
+    "path": "/search/[query]",
+    "title": "Query",
+    "description": "Conteúdo sobre Query",
+    "content": ""
+  }
+]
