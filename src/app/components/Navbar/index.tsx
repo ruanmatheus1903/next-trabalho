@@ -27,73 +27,48 @@ const navigation: NavItem[] = [
   {
     name: "INSTITUCIONAL",
     href: "#",
-    submenu: [
-      { name: "INSTITUCIONAL", href: "/institucional" },
-      { name: "SALA DO EMPREENDEDOR", href: "/sala-do-empreendedor" },
-    ],
   },
   {
-    name: "GESTÃO URBANA E MEIO AMBIENTE",
+    name: "AGÊNCIA DO TRABALHADOR",
     href: "#",
     submenu: [
       {
-        name: "SISTEMA DE LICENCIAMENTO ONLINE",
-        href: "http://cidadao.sissofia.com.br/",
+        name: "ENDEREÇOS AGÊNCIA DO TRABALHADOR",
+        href: "#",
       },
       {
-        name: "PLANO DIRETOR",
-        href: "/gestao-urbana-e-meio-ambiente/plano-diretor",
+        name: "SERVIÇOS AO TRABALHADOR",
+        href: "#",
       },
       {
-        name: "LEGISLAÇÃO",
-        href: "/gestao-urbana-e-meio-ambiente/legislacao",
+        name: "SERVIÇOS AO EMPREGADOR",
+        href: "#",
+      },
+    ],
+  },
+   {
+    name: "SALA DO EMPREENDEDOR",
+    href: "#",
+   },
+  {
+    name: "ÁREAS DE ATUAÇÃO",
+    href: "#",
+    submenu: [
+      { name: "TRABALHO E INTERMEDIAÇÃO DE MÃO DE OBRA", href: "#" },
+      { name: "ECONOMIA SOLIDÁRIA", href: "#",
         submenu: [
-          {
-            name: "LEGISLAÇÃO URBANÍSTICA",
-            href: "/gestao-urbana-e-meio-ambiente/legislacao-urbanistica",
-          },
-          {
-            name: "LEGISLAÇÃO AMBIENTAL",
-            href: "/gestao-urbana-e-meio-ambiente/legislacao-ambiental",
-          },
-        ],
-      },
-      { name: "ORIENTAÇÕES GERAIS", href: "/orientacoes-gerais" },
-      {
-        name: "TELEFONE PARA ATENDIMENTO",
-        href: "/gestao-urbana-e-meio-ambiente/telefones-para-atendimento",
-      },
+          { name: "SEMINÁRIO TEMÁTICO", href: "#" },]},
+      { name: "ECONOMIA CRIATIVA", href: "#" },
+      { name: "EMPREENDEDORISMO", href: "#" },
+      { name: "QUALIFICAÇÃO PROFISSIONAL", href: "#" },
+     
     ],
   },
   {
-    name: "INFORMATIVO",
+    name: "FALE CONOSCO",
     href: "#",
-    submenu: [
-      { name: "COMPRAS GOVERNAMENTAIS", href: "/informativo/compras-governamentais" },
-      { name: "DADOS DO MUNICÍPIO", href: "/informativo/dados-do-municipio" },
-      { name: "DOWNLOADS", href: "/informativo/downloads" },
-      { name: "INCENTIVOS FISCAIS", href: "/informativo/incentivo-fiscais" },
-      { name: "JABOATÃO INVEST", href: "/informativo/jaboatao-invest" },
-      { name: "REDE SIM", href: "/informativo/rede-sim" },
-      { name: "ZPE - ZONA DE PROCESSAMENTO E EXPORTAÇÃO", href: "/informativo/zpe" },
-    ],
   },
-  {
-    name: "CONTATO",
-    href: "#",
-    submenu: [
-      { name: "FALE CONOSCO", href: "/#faleconosco" },
-      { name: "SOLICITAÇÃO DE AGENDAMENTO DE VISITA", href: "/contato/solicitacao-de-agendamento-de-visita" },
-      { name: "CONTATO SECRETARIAS EXECUTIVAS", href: "/contato/contato-secretarias" },
-    ],
-  },
-  {
-    name: "EMLUME",
-    href: "#",
-    submenu: [
-      { name: "REGULAMENTO DE LICITAÇÕES - EMLUME", href: "/emlume/regulamento-de-licitacoes-emlume" },
-    ],
-  },
+ 
 ];
 
 const institutionalLinks = [
