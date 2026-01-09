@@ -71,7 +71,7 @@ export default function CardGrid() {
       href: "/inss-digital",
       icon: <FaBriefcase className="text-9xl group-hover:text-7xl transition-all duration-500" />,
       frontGradient: "bg-[#224276]",
-      backGradient: "from-slate-700 to-slate-900"
+      backGradient: "bg-[#224276]"
     },
     {
       id: 6,
@@ -79,8 +79,8 @@ export default function CardGrid() {
       description: "Acesse nossa página e tenha toda informação de que precisa para se tornar o mais novo empreendedor do Jaboatão dos Guararapes.",
       href: "/gestao-urbana-e-meio-ambiente/plano-diretor",
       icon: <FaHandshakeAngle className="text-8xl group-hover:text-7xl transition-all duration-500" />,
-      frontGradient: "from-indigo-600 to-purple-700",
-      backGradient: "from-purple-800 to-indigo-900"
+      frontGradient: "from-yellow-400 to-yellow-500",
+      backGradient: "from-yellow-400 to-yellow-500"
     }
   ];
 
@@ -109,7 +109,6 @@ export default function CardGrid() {
       <>
         <div className="relative">
           {card.icon}
-          <div className="absolute -top-2 -right-2 w-8 h-8 bg-white/20 rounded-full animate-ping"></div>
         </div>
         <h3 className="text-white text-2xl font-bold mt-6 leading-tight">
           {card.title}

@@ -117,7 +117,7 @@ const FaleConosco = () => {
         <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 max-w-[1200px] w-full z-10 relative">
           <div className="w-full md:w-1/2 h-[500px] overflow-hidden shadow-lg transition-transform duration-700 ease-out">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.920978057611!2d-34.928623125821084!3d-8.153671694100288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1b5f7da5f7ab%3A0xe2b0d9cf96fc7e3e!2sAv.%20Barreto%20de%20Menezes%2C%201648%20-%20Prazeres%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054310-310!5e0!3m2!1spt-BR!2sbr!4v1619471701747!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1974.7536411173098!2d-34.920609!3d-8.151535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1dbb3127331%3A0x88a42537f8d55ff0!2sEstr.%20da%20Batalha%2C%201200%20-%20Jardim%20Jord%C3%A3o%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054315-570%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1767978890126!5m2!1spt-BR!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
