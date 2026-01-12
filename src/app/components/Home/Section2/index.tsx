@@ -33,7 +33,7 @@ export default function CardGrid() {
       href: "/**",
       icon: <TfiLayoutGrid3Alt className="text-8xl group-hover:text-7xl transition-all duration-500" />,
       frontGradient: "from-blue-600 to-blue-800",
-      backGradient: "from-blue-800 to-blue-900"
+      backGradient: "from-blue-800 to-blue-600"
     },
     {
       id: 2,
@@ -41,8 +41,8 @@ export default function CardGrid() {
       description: "Saiba mais informações sobre o programa e faça envio do seu currículo.",
       href: "/**",
       icon: null,
-      frontGradient: "bg-black to-gray-200",
-      backGradient: "from-gray-700 to-gray-900",
+      frontGradient: "from-green-400 to-green-700",
+      backGradient: "from-green-700 to-green-400",
       imageSrc: "/images/cards/apprentice-450-white.png",
       imageAlt: "Jaboatão Aprendiz"
     },
@@ -53,7 +53,7 @@ export default function CardGrid() {
       href: "/**",
       icon: <IoLocationSharp className="text-8xl group-hover:text-7xl transition-all duration-500" />,
       frontGradient: "from-cyan-600 to-blue-700",
-      backGradient: "from-blue-800 to-blue-900"
+      backGradient: "from-blue-700 to-blue-600"
     },
     {
       id: 4,
@@ -62,7 +62,7 @@ export default function CardGrid() {
       href: "/**",
       icon: <MdAccessibilityNew className="text-9xl group-hover:text-7xl transition-all duration-500" />,
       frontGradient: "from-emerald-600 to-green-700",
-      backGradient: "from-green-800 to-emerald-900"
+      backGradient: "from-green-700 to-emerald-600"
     },
     {
       id: 5,
@@ -70,8 +70,8 @@ export default function CardGrid() {
       description: "EMPREGADOR, encontre aqui todas as informações sobre os serviços disponibilizados pela secretaria.",
       href: "/inss-digital",
       icon: <FaBriefcase className="text-9xl group-hover:text-7xl transition-all duration-500" />,
-      frontGradient: "bg-[#224276]",
-      backGradient: "bg-[#224276]"
+      frontGradient: "from-blue-600 to-blue-800",
+      backGradient: "from-blue-800 to-blue-900"
     },
     {
       id: 6,
@@ -79,8 +79,8 @@ export default function CardGrid() {
       description: "Acesse nossa página e tenha toda informação de que precisa para se tornar o mais novo empreendedor do Jaboatão dos Guararapes.",
       href: "/gestao-urbana-e-meio-ambiente/plano-diretor",
       icon: <FaHandshakeAngle className="text-8xl group-hover:text-7xl transition-all duration-500" />,
-      frontGradient: "from-yellow-400 to-yellow-500",
-      backGradient: "from-yellow-400 to-yellow-500"
+      frontGradient: "from-yellow-400 to-yellow-700",
+      backGradient: "from-yellow-700 to-yellow-400"
     }
   ];
 
@@ -165,16 +165,13 @@ export default function CardGrid() {
   };
 
   return (
-    <div id="informativo" className="overflow-hidden bg-gradient-to-b from-blue-50 to-blue-100">
+    <div id="AGÊNCIA DO TRABALHADOR" className="overflow-hidden bg-gradient-to-b from-blue-50 to-blue-100">
       {/* HEADER */}
       <div className="relative text-center py-12 bg-gradient-to-b from-[#FFD24E] to-[#FDA417] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
         <h1 className="text-5xl font-bold text-white relative z-10 tracking-tight">
-          <span className="drop-shadow-xl">INFORMATIVO</span>
+          <span className="drop-shadow-xl">AGÊNCIA DO TRABALHADOR</span>
         </h1>
-        <p className="text-white/90 mt-3 text-lg font-light relative z-10">
-          Explore nossos serviços e informações municipais
-        </p>
       </div>
 
       {/* WAVES */}
