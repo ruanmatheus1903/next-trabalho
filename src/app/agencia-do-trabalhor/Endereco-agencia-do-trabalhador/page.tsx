@@ -1,19 +1,18 @@
-import Emlume from "./emlume";
+import EnderecoAgenciaDoTrabalhador from "../endereco-agencia-do-trabalhador";
 import Model from "../../components/model-page";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "Regulamento de Licitações – EMLUME- Secretaria de Desenvolvimento Econômico e Turismo",
+    "Endereços das Agências - Secretaria de Desenvolvimento Econômico e Turismo",
 };
 
-export default function Config() {
-  // Alterei para começar com letra maiúscula (convenção React)
+export default function config() {
   return (
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={"Regulamento de Licitações – EMLUME"}
+        titulo={"ENDEREÇOS DAS AGÊNCIAS"}
         subtitulo={
           <span>
             <Link
@@ -22,14 +21,11 @@ export default function Config() {
             >
               INÍCIO
             </Link>
-            &nbsp;»{" "}
-            <span className="brightness-125">
-              Regulamento de Licitações – EMLUME
-            </span>
+            &nbsp;» <span className="brightness-125">enderecos-agencia-do-trabalhador</span>
           </span>
         }
       >
-        <Emlume />
+        <EnderecoAgenciaDoTrabalhador />
       </Model>
     </div>
   );
