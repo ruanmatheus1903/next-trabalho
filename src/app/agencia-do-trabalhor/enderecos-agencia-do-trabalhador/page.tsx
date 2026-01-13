@@ -1,10 +1,9 @@
-import EnderecoAgenciaDoTrabalhador from "../endereco-agencia-do-trabalhador";
+import EnderecosAgenciaDoTrabalhador from "./endereco";
 import Model from "../../components/model-page";
 import Link from "next/link";
 
 export const metadata = {
-  title:
-    "Endereços das Agências - Secretaria de Desenvolvimento Econômico e Turismo",
+  title: "ENDEREÇOS DAS AGÊNCIAS - Secretaria de Desenvolvimento Econômico e Turismo",
 };
 
 export default function config() {
@@ -21,11 +20,14 @@ export default function config() {
             >
               INÍCIO
             </Link>
-            &nbsp;» <span className="brightness-125">enderecos-agencia-do-trabalhador</span>
+            &nbsp;»{" "}
+            <span className="brightness-125">
+            ENDEREÇOS DAS AGÊNCIAS
+            </span>
           </span>
         }
       >
-        <EnderecoAgenciaDoTrabalhador />
+        <EnderecosAgenciaDoTrabalhador/>
       </Model>
     </div>
   );

@@ -1,5 +1,11 @@
 [
   {
+    "path": "/agencia-do-trabalhor/Endereco-agencia-do-trabalhador",
+    "title": "Endereco Agencia Do Trabalhador",
+    "description": "Conteúdo sobre Endereco Agencia Do Trabalhador",
+    "content": ""
+  },
+  {
     "path": "/components/AccessibilityButton",
     "title": "AccessibilityButton",
     "description": "Conteúdo sobre AccessibilityButton",
@@ -21,7 +27,7 @@
     "path": "/components/Home/Section1",
     "title": "Section1",
     "description": "Conteúdo sobre Section1",
-    "content": "Secretaria do Trabalho Qualificação Empreendedorismo e Juventude"
+    "content": "Secretaria do Trabalho Qualificação Empreendedorismo Juventude"
   },
   {
     "path": "/components/Home/Section2",
@@ -76,12 +82,6 @@
     "title": "Solicitacao De Agendamento De Visita",
     "description": "Conteúdo sobre Solicitacao De Agendamento De Visita",
     "content": ""
-  },
-  {
-    "path": "/emlume/regulamento-de-licitacoes-emlume",
-    "title": "Regulamento De Licitacoes Emlume",
-    "description": "Conteúdo sobre Regulamento De Licitacoes Emlume",
-    "content": "O CALENDÁRIO publicado está em formato PDF. Caso não consiga abrir o arquivo, \" \"  clique AQUI  \" \"  para fazer o download do arquivo em PDF."
   },
   {
     "path": "/gestao-urbana-e-meio-ambiente/legislacao-ambiental",

@@ -26,7 +26,7 @@ interface NavItem {
 const navigation: NavItem[] = [
   {
     name: "INSTITUCIONAL",
-    href: "#",
+    href: "/institucional",
   },
   {
     name: "AGÊNCIA DO TRABALHADOR",
@@ -34,7 +34,7 @@ const navigation: NavItem[] = [
     submenu: [
       {
         name: "ENDEREÇOS AGÊNCIA DO TRABALHADOR",
-        href: "#",
+        href: "/agencia-do-trabalhor/enderecos-agencia-do-trabalhador",
       },
       {
         name: "SERVIÇOS AO TRABALHADOR",
