@@ -38,11 +38,11 @@ const navigation: NavItem[] = [
       },
       {
         name: "SERVIÇOS AO TRABALHADOR",
-        href: "#",
+        href: "/agencia-do-trabalhor/servicos-ao-trabalhador",
       },
       {
         name: "SERVIÇOS AO EMPREGADOR",
-        href: "#",
+        href: "/agencia-do-trabalhor/servicos-ao-empregador",
       },
     ],
   },

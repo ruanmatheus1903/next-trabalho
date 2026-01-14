@@ -99,75 +99,108 @@ export default function AgenciasTrabalho() {
             </p>
           </div>
 
-          <div className="mt-10">
-            <h3 className="text-3xl font-bold text-blue-800 mb-6">
-              CONFIRA NOSSOS ENDEREÇOS
-            </h3>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+          {/* WAVES DE ENDEREÇO - AJUSTADO */}
+          <div className="relative mt-16 mb-12">
+            <div className="relative text-center py-12 bg-gradient-to-b from-[#1e40af] to-[#1e3a8a] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white relative z-10 tracking-tight">
+                <span className="drop-shadow-xl">CONFIRA NOSSOS ENDEREÇOS</span>
+              </h1>
+              <p className="text-white/90 mt-3 text-lg md:text-xl font-light relative z-10">
+                Agência do Trabalhador - Jaboatão dos Guararapes
+              </p>
+            </div>
+
+            {/* WAVES SVG - AJUSTADO */}
+            <div className="relative w-full">
+              <svg
+                width="100%"
+                viewBox="0 0 2000 96"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-all duration-700 ease-out"
+              >
+                <path
+                  opacity="0.33"
+                  d="M946 62.22C538.2 152.254 419.8 27.5523 305.4 62.22C132 115.037 0 54.4708 0 54.4708V-6.40161H2000V54.4708C2000 54.4708 1875.8 81.0833 1810.2 84.3462C1744.6 87.711 1684.6 71.8046 1658.6 61.8122C1612 44.1724 1490.6 2.46924 1389.8 -1.60931C1289 -5.68786 984.8 53.757 946 62.22Z"
+                  fill="#1e40af"
+                  className="transition-all duration-1000"
+                />
+                <path
+                  opacity="0.66"
+                  d="M1468 62.22C1377 62.22 1313.6 38.5644 1209.8 22.3522C1152.6 13.4813 909.2 12.0538 701.8 62.22C494.4 112.386 518.4 27.1445 403.4 62.22C231.4 114.222 0 34.18 0 34.18V-6.40161H2000V30.8152C2000 30.8152 1943.6 11.9519 1815.8 11.9519C1620.4 12.0538 1551.4 62.22 1468 62.22Z"
+                  fill="#1e40af"
+                  className="transition-all duration-800"
+                />
+                <path
+                  d="M1532.2 23.0659C1132.2 -35.5633 1000.2 89.8522 742 42.9489C484 -4.56626 484 -0.895566 369.6 14.6029C256 30.1014 264.6 39.3801 179.8 47.1294C57.2 58.5493 0 -6.40161 0 -6.40161H2000C2000 -6.40161 1980.2 35.3016 1832.8 42.643C1685.4 49.9844 1659.2 41.5214 1532.2 23.0659Z"
+                  fill="#1e40af"
+                  className="transition-all duration-600"
+                />
+              </svg>
+            </div>
           </div>
         </div>
 
-        {/* Layout Principal - Cards + Mapa */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {/* Cards das Agências (2/3 da largura) */}
-          <div className="lg:col-span-2">
+        {/* Layout Principal - Cards ao lado do Mapa */}
+        <div className="flex flex-col lg:flex-row gap-8 mb-16">
+          {/* Cards das Agências (lado esquerdo) */}
+          <div className="lg:w-2/3">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {agencias.map((agencia) => (
                 <div
                   key={agencia.id}
-                  className={`group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:-translate-y-1 ${
+                  className={`group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer ${
                     agenciaSelecionada === agencia.id 
-                      ? 'ring-2 ring-blue-500 border-blue-200' 
-                      : 'border border-gray-200'
+                      ? 'ring-2 ring-blue-500 border-blue-200 transform scale-[1.02]' 
+                      : 'border border-gray-200 hover:-translate-y-1'
                   }`}
                   onClick={() => setAgenciaSelecionada(agencia.id)}
                 >
-                  {/* Indicador de seleção */}
-                  {agenciaSelecionada === agencia.id && (
-                    <div className="absolute top-4 right-4 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                  )}
-
                   {/* Header do Card */}
-                  <div className={`p-4 ${agenciaSelecionada === agencia.id ? 'bg-gradient-to-r from-blue-50 to-indigo-50' : 'bg-white'}`}>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                          <FaMapMarkerAlt className="text-white text-lg" />
-                        </div>
-                        <span className="ml-3 text-xs font-semibold text-blue-800 uppercase tracking-wider">
-                          AGÊNCIA {agencia.id}
+                  <div className={`p-4 ${agenciaSelecionada === agencia.id ? 'bg-blue-50' : 'bg-white'}`}>
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                        agenciaSelecionada === agencia.id 
+                          ? 'bg-gradient-to-br from-blue-600 to-blue-700' 
+                          : 'bg-gradient-to-br from-blue-500 to-blue-600'
+                      }`}>
+                        <FaMapMarkerAlt className="text-white text-lg" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-sm font-bold text-gray-900 mb-1 line-clamp-2">
+                          {agencia.nome}
+                        </h4>
+                        <span className="text-xs font-semibold text-blue-700 uppercase tracking-wide">
+                          Agência {agencia.id}
                         </span>
                       </div>
                     </div>
-                    
-                    <h4 className="text-base font-bold text-gray-900 mb-2 line-clamp-2">
-                      {agencia.nome}
-                    </h4>
                   </div>
 
                   {/* Corpo do Card */}
                   <div className="p-4 pt-0">
                     <div className="space-y-4">
                       {/* Endereço */}
-                      <div className="flex items-start space-x-3">
-                        <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                          <FaMapMarkerAlt className="text-blue-600 text-sm" />
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <FaMapMarkerAlt className="text-blue-600 text-xs" />
                         </div>
-                        <div>
-                          <p className="text-sm text-gray-600 font-medium">Endereço</p>
-                          <p className="text-sm text-gray-800 mt-1">{agencia.endereco}</p>
-                          <p className="text-xs text-gray-500 mt-1">{agencia.bairro} - {agencia.cidade}</p>
+                        <div className="flex-1">
+                          <p className="text-xs text-gray-500 font-medium">Endereço</p>
+                          <p className="text-sm text-gray-800 mt-0.5">{agencia.endereco}</p>
+                          <p className="text-xs text-gray-500 mt-0.5">{agencia.bairro}</p>
                         </div>
                       </div>
 
                       {/* Telefones */}
-                      <div className="flex items-start space-x-3">
-                        <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                          <FaPhone className="text-green-600 text-sm" />
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <FaPhone className="text-green-600 text-xs" />
                         </div>
-                        <div>
-                          <p className="text-sm text-gray-600 font-medium">Telefone</p>
-                          <div className="space-y-1 mt-1">
+                        <div className="flex-1">
+                          <p className="text-xs text-gray-500 font-medium">Telefone</p>
+                          <div className="space-y-0.5 mt-0.5">
                             {agencia.telefones.map((tel, idx) => (
                               <a 
                                 key={idx}
@@ -183,13 +216,13 @@ export default function AgenciasTrabalho() {
                       </div>
 
                       {/* Horário */}
-                      <div className="flex items-start space-x-3">
-                        <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                          <FaClock className="text-amber-600 text-sm" />
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <FaClock className="text-amber-600 text-xs" />
                         </div>
-                        <div>
-                          <p className="text-sm text-gray-600 font-medium">Horário</p>
-                          <p className="text-sm text-gray-800 mt-1">{agencia.horario}</p>
+                        <div className="flex-1">
+                          <p className="text-xs text-gray-500 font-medium">Horário</p>
+                          <p className="text-sm text-gray-800 mt-0.5">{agencia.horario}</p>
                         </div>
                       </div>
                     </div>
@@ -200,148 +233,155 @@ export default function AgenciasTrabalho() {
                         e.stopPropagation();
                         abrirNoMaps(agencia.endereco, agencia.cidade);
                       }}
-                      className="mt-6 w-full py-2.5 px-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-semibold flex items-center justify-center gap-2 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-[1.02]"
+                      className="mt-4 w-full py-2 px-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold flex items-center justify-center gap-1 hover:from-blue-700 hover:to-blue-800 transition-all duration-300"
                     >
                       <FaExternalLinkAlt className="text-xs" />
                       Ver no Mapa
                     </button>
                   </div>
 
-                  {/* Efeito hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Indicador de seleção */}
+                  {agenciaSelecionada === agencia.id && (
+                    <div className="absolute top-2 right-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Mapa e Informações Detalhadas (1/3 da largura) */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-8 space-y-6">
-              {/* Card de Agência Selecionada */}
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-blue-100">
-                <div className="p-6 bg-gradient-to-r from-blue-600 to-blue-700">
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
+          {/* Mapa (lado direito) */}
+          <div className="lg:w-1/3">
+            <div className="sticky top-8">
+              {/* Card do Mapa */}
+              <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-blue-100 h-full">
+                <div className="p-4 bg-gradient-to-r from-blue-600 to-blue-700">
+                  <h3 className="text-lg font-bold text-white flex items-center gap-2">
                     <FaMapMarkerAlt />
-                    {agenciaAtiva?.nome}
+                    Mapa Interativo
                   </h3>
                 </div>
                 
-                <div className="p-6">
-                  <div className="space-y-6">
-                    {/* Mapa (placeholder interativo) */}
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200">
-                      <div className="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100 relative">
-                        {/* Simulação de mapa com marcador */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="relative inline-block">
-                              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                <FaMapMarkerAlt className="text-white text-2xl" />
-                              </div>
-                              <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full animate-ping"></div>
+                <div className="p-4">
+                  {/* Mapa em destaque */}
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-3 border border-blue-200 mb-4">
+                    <div className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100 relative">
+                      {/* Simulação de mapa com marcador principal */}
+                      <div className="absolute inset-0">
+                        {/* Estradas */}
+                        <div className="absolute top-1/4 left-1/4 w-1/2 h-1 bg-gray-300 transform rotate-45"></div>
+                        <div className="absolute top-1/4 left-1/4 w-1 h-1/2 bg-gray-300 transform -rotate-45"></div>
+                        
+                        {/* Rios ou riachos */}
+                        <div className="absolute top-2/3 left-1/3 w-1/3 h-1 bg-blue-300 rounded-full"></div>
+                        
+                        {/* Áreas verdes */}
+                        <div className="absolute top-1/3 right-1/4 w-8 h-8 bg-green-200 rounded-full"></div>
+                        <div className="absolute bottom-1/4 left-1/4 w-6 h-6 bg-green-200 rounded-full"></div>
+                        
+                        {/* Agência selecionada (marcador principal) */}
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                          <div className="relative">
+                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
+                              <FaMapMarkerAlt className="text-white text-xl" />
                             </div>
-                            <p className="text-gray-700 font-medium">Localização da Agência</p>
-                            <p className="text-sm text-gray-500 mt-1">{agenciaAtiva?.bairro}</p>
+                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-ping"></div>
+                            
+                            {/* Tooltip */}
+                            <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-white px-3 py-2 rounded-lg shadow-lg border border-gray-200 min-w-[160px]">
+                              <p className="text-xs font-bold text-gray-900">{agenciaAtiva?.nome.split(' ')[0]}</p>
+                              <p className="text-xs text-gray-600 mt-1">{agenciaAtiva?.bairro}</p>
+                              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white border-r border-b border-gray-200 rotate-45"></div>
+                            </div>
                           </div>
                         </div>
                         
-                        {/* Pontos de referência no "mapa" */}
-                        <div className="absolute top-4 left-4 w-3 h-3 bg-gray-400 rounded-full"></div>
-                        <div className="absolute top-8 right-8 w-3 h-3 bg-gray-400 rounded-full"></div>
-                        <div className="absolute bottom-8 left-8 w-3 h-3 bg-gray-400 rounded-full"></div>
-                        <div className="absolute bottom-12 right-12 w-3 h-3 bg-gray-400 rounded-full"></div>
+                        {/* Outras agências (marcadores secundários) */}
+                        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-400 rounded-full border-2 border-white shadow"></div>
+                        <div className="absolute top-2/3 right-1/4 w-4 h-4 bg-blue-400 rounded-full border-2 border-white shadow"></div>
+                        <div className="absolute bottom-1/4 right-1/3 w-4 h-4 bg-blue-400 rounded-full border-2 border-white shadow"></div>
+                        
+                        {/* Rótulos das ruas */}
+                        <div className="absolute top-1/4 left-1/4 transform -translate-y-2">
+                          <span className="text-xs text-gray-500 bg-white/80 px-1 py-0.5 rounded">Av. Principal</span>
+                        </div>
+                        <div className="absolute bottom-1/3 right-1/4 transform translate-y-2">
+                          <span className="text-xs text-gray-500 bg-white/80 px-1 py-0.5 rounded">Rua Secundária</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Informações da Agência Selecionada */}
+                  <div className="space-y-4">
+                    <h4 className="text-base font-bold text-gray-900 border-b pb-2">
+                      {agenciaAtiva?.nome}
+                    </h4>
+                    
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-blue-50 p-3 rounded-lg">
+                        <p className="text-xs text-blue-600 font-semibold uppercase">Bairro</p>
+                        <p className="text-sm font-bold text-gray-900">{agenciaAtiva?.bairro}</p>
                       </div>
                       
-                      <button
-                        onClick={() => abrirNoMaps(agenciaAtiva?.endereco || '', agenciaAtiva?.cidade || '')}
-                        className="mt-4 w-full py-3 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold flex items-center justify-center gap-2 hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
-                      >
-                        <FaExternalLinkAlt />
-                        Abrir no Google Maps
-                      </button>
+                      <div className="bg-indigo-50 p-3 rounded-lg">
+                        <p className="text-xs text-indigo-600 font-semibold uppercase">Cidade</p>
+                        <p className="text-sm font-bold text-gray-900">{agenciaAtiva?.cidade}</p>
+                      </div>
                     </div>
 
-                    {/* Informações Detalhadas */}
-                    <div className="space-y-4">
-                      <h4 className="text-lg font-bold text-gray-900 border-b pb-2">Informações Detalhadas</h4>
-                      
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-blue-50 p-4 rounded-xl">
-                          <p className="text-xs text-blue-600 font-semibold uppercase tracking-wider">Bairro</p>
-                          <p className="text-lg font-bold text-gray-900">{agenciaAtiva?.bairro}</p>
+                    {/* Endereço completo */}
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <p className="text-xs text-gray-600 font-semibold uppercase mb-1">Endereço Completo</p>
+                      <p className="text-sm text-gray-800">{agenciaAtiva?.endereco}</p>
+                    </div>
+
+                    {/* Horário em destaque */}
+                    <div className="bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border border-amber-200">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                          <FaClock className="text-amber-600" />
                         </div>
-                        
-                        <div className="bg-indigo-50 p-4 rounded-xl">
-                          <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wider">Cidade</p>
-                          <p className="text-lg font-bold text-gray-900">{agenciaAtiva?.cidade}</p>
+                        <div>
+                          <p className="text-xs text-amber-700 font-semibold">Horário de Funcionamento</p>
+                          <p className="text-base font-bold text-gray-900">{agenciaAtiva?.horario}</p>
                         </div>
                       </div>
+                    </div>
 
-                      {/* Horário em destaque */}
-                      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 p-4 rounded-xl border border-amber-200">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
-                            <FaClock className="text-amber-600" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-amber-700 font-semibold">Horário de Funcionamento</p>
-                            <p className="text-xl font-bold text-gray-900">{agenciaAtiva?.horario}</p>
-                          </div>
-                        </div>
+                    {/* Botão para abrir no Google Maps */}
+                    <button
+                      onClick={() => abrirNoMaps(agenciaAtiva?.endereco || '', agenciaAtiva?.cidade || '')}
+                      className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold flex items-center justify-center gap-2 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 mt-2"
+                    >
+                      <FaExternalLinkAlt />
+                      Abrir no Google Maps
+                    </button>
+                  </div>
+
+                  {/* Legenda */}
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <h5 className="text-xs font-semibold text-gray-700 mb-2">Legenda do Mapa</h5>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="flex items-center gap-1">
+                        <div className="w-3 h-3 rounded-full bg-blue-500 border-2 border-white"></div>
+                        <span className="text-xs text-gray-600">Agência Ativa</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <div className="w-3 h-3 rounded-full bg-blue-400 border-2 border-white"></div>
+                        <span className="text-xs text-gray-600">Outras Agências</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <div className="w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+                        <span className="text-xs text-gray-600">Localização</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <div className="w-3 h-3 bg-green-200 rounded-full"></div>
+                        <span className="text-xs text-gray-600">Áreas Verdes</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Legenda do Mapa */}
-              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-                <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
-                  <FaMapMarkerAlt className="text-blue-500" />
-                  Como Chegar
-                </h4>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    Agência selecionada no mapa
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                    Pontos de referência próximos
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                    Localização ativa
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Rodapé Informativo */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 text-center">
-            <h4 className="text-2xl font-bold text-blue-900 mb-4">
-              ✨ Encontre a Agência Mais Próxima de Você
-            </h4>
-            <p className="text-gray-700 max-w-3xl mx-auto">
-              Todas as agências oferecem serviços gratuitos de intermediação de mão de obra, 
-              cadastro de currículos, orientação profissional e informações sobre o mercado de trabalho.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                🆓 Serviços Gratuitos
-              </span>
-              <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                📋 Cadastro de Currículos
-              </span>
-              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
-                💼 Intermediação de Emprego
-              </span>
-              <span className="px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">
-                🕐 Atendimento das 8h às 16h
-              </span>
             </div>
           </div>
         </div>
