@@ -88,7 +88,7 @@ export default function AgenciasTrabalho() {
       </p>
 
       <div className="mb-6">
-        <h4 className="text-xl py-5 mb-10 font-semibold text-gray-800 mb-4">
+        <h4 className="text-xl py-5 mb-10 font-semibold text-gray-800">
           Na Sala do Empreendedor você tem os seguintes serviços:
         </h4>
         

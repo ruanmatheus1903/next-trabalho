@@ -46,29 +46,34 @@ const navigation: NavItem[] = [
       },
     ],
   },
-   {
+  {
     name: "SALA DO EMPREENDEDOR",
     href: "/sala-do-empreendedor",
-   },
+  },
   {
     name: "ÁREAS DE ATUAÇÃO",
     href: "#",
     submenu: [
-      { name: "TRABALHO E INTERMEDIAÇÃO DE MÃO DE OBRA", href: "#" },
-      { name: "ECONOMIA SOLIDÁRIA", href: "#",
+      {
+        name: "TRABALHO E INTERMEDIAÇÃO DE MÃO DE OBRA",
+        href: "/areas-de-atuacao/trabalho-e-intermediacao-de-mao-de-obra"
+      },
+      {
+        name: "ECONOMIA SOLIDÁRIA", href: "#",
         submenu: [
-          { name: "SEMINÁRIO TEMÁTICO", href: "#" },]},
+          { name: "SEMINÁRIO TEMÁTICO", href: "#" },]
+      },
       { name: "ECONOMIA CRIATIVA", href: "#" },
       { name: "EMPREENDEDORISMO", href: "#" },
       { name: "QUALIFICAÇÃO PROFISSIONAL", href: "#" },
-     
+
     ],
   },
   {
     name: "FALE CONOSCO",
     href: "#",
   },
- 
+
 ];
 
 const institutionalLinks = [
@@ -254,11 +259,10 @@ const NavLinks: React.FC = () => {
                     >
                       <Link
                         href={subItem.href}
-                        className={`px-4 py-3 text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
-                          isSubActive
-                            ? "bg-[#ffffff] text-[#0037C1]"
-                            : "text-white"
-                        }`}
+                        className={`px-4 py-3 text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${isSubActive
+                          ? "bg-[#ffffff] text-[#0037C1]"
+                          : "text-white"
+                          }`}
                         onClick={(e) => {
                           const isHashLink = subItem.href.startsWith("/#");
                           if (isHashLink) {
@@ -297,11 +301,10 @@ const NavLinks: React.FC = () => {
                               >
                                 <Link
                                   href={subSubItem.href}
-                                  className={`px-4 py-2 text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
-                                    isSubSubActive
-                                      ? "bg-[#ffffff] text-[#0023c1]"
-                                      : "text-[#ffffff]"
-                                  }`}
+                                  className={`px-4 py-2 text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${isSubSubActive
+                                    ? "bg-[#ffffff] text-[#0023c1]"
+                                    : "text-[#ffffff]"
+                                    }`}
                                   onClick={(e) => {
                                     const isHashLink =
                                       subSubItem.href.startsWith("/#");
@@ -430,17 +433,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
     <>
       {isLoading && <LoadingScreen />}
       {isMenuOpen && (
-        <div 
-          className={`fixed inset-0 bg-black transition-opacity duration-500 ${
-            isClosing ? "opacity-0" : "opacity-50"
-          }`}
+        <div
+          className={`fixed inset-0 bg-black transition-opacity duration-500 ${isClosing ? "opacity-0" : "opacity-50"
+            }`}
           onClick={handleClose}
         />
       )}
-      <div 
-        className={`fixed top-9 left-0 w-full h-[calc(100%-2.25rem)] bg-yellow-400 shadow-lg flex flex-col overflow-hidden transition-transform duration-500 ${
-          isClosing ? "-translate-y-full" : "translate-y-0"
-        }`}
+      <div
+        className={`fixed top-9 left-0 w-full h-[calc(100%-2.25rem)] bg-yellow-400 shadow-lg flex flex-col overflow-hidden transition-transform duration-500 ${isClosing ? "-translate-y-full" : "translate-y-0"
+          }`}
       >
         {/* Topo com logo e botão ✕ */}
         <div className="py-5 px-5 flex justify-between items-center border-b border-gray-200">
@@ -591,9 +592,8 @@ const Navbar = () => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed top-9 w-full h-20 transition-all duration-300 z-50 px-[50px] ${
-        scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
-      }`}
+      className={`fixed top-9 w-full h-20 transition-all duration-300 z-50 px-[50px] ${scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
+        }`}
     >
       <div className="relative mx-auto py-3">
         <div className="relative flex h-14 items-center">

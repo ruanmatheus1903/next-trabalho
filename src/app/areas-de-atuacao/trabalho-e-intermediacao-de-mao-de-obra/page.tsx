@@ -1,17 +1,17 @@
-import RedeSim from "./rede-sim";
+import TrabalhoIntermediacaoDeMaoDeObra from "./TrabalhoIntermEdiacaoDeMaoDeObra";
 import Model from "../../components/model-page";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Rede SIM- Secretaria de Desenvolvimento Econômico e Turismo",
+  title: "Trabalho e Intermediação da Mão de Obra - Secretaria de Desenvolvimento Econômico e Turismo",
 };
 
-export default function config() {
+export default function Config() {
   return (
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={"Rede SIM"}
+        titulo={"Trabalho e Intermediação da Mão de Obra"}
         subtitulo={
           <span>
             <Link
@@ -22,12 +22,12 @@ export default function config() {
             </Link>
             &nbsp;»{" "}
             <span className="brightness-125">
-            Rede SIM
+              Trabalho e Intermediação da Mão de Obra
             </span>
           </span>
         }
       >
-        <RedeSim />
+        <TrabalhoIntermediacaoDeMaoDeObra />
       </Model>
     </div>
   );
