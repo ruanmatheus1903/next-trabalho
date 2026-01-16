@@ -6,10 +6,6 @@ const IntermediacaoMaoDeObra = () => {
     <div className="py-12 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Intermediação de Mão de Obra
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
 
         <div className="space-y-8">
@@ -100,59 +96,65 @@ const RedeAtendimento = () => {
   ];
 
   return (
-    <div className="py-12 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Rede de Atendimento ao Trabalhador
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
-        </div>
+   <div className="py-12 bg-gray-50">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mb-10 text-center">
+      <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        Rede de Atendimento ao Trabalhador
+      </h2>
+      <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+    </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {unidades.map((unidade) => (
-            <div 
-              key={unidade.id} 
-              className={`bg-white rounded-xl shadow-lg border ${unidade.tipo === 'matriz' ? 'border-blue-300' : 'border-gray-200'} p-6`}
-            >
-              <div className="flex items-center mb-4">
-                <div className={`w-10 h-10 rounded-full ${unidade.tipo === 'matriz' ? 'bg-blue-100' : 'bg-green-100'} flex items-center justify-center mr-3`}>
-                  {unidade.tipo === 'matriz' ? (
-                    <FaBuilding className="text-blue-600" />
-                  ) : (
-                    <FaMapMarkerAlt className="text-green-600" />
-                  )}
-                </div>
-                <h3 className="font-bold text-gray-900 text-sm">{unidade.nome}</h3>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="flex items-start">
-                  <FaMapMarkerAlt className="text-gray-400 mt-1 mr-2 flex-shrink-0" />
-                  <p className="text-gray-700 text-sm">{unidade.endereco}</p>
-                </div>
-                
-                <div className="flex items-start">
-                  <FaPhone className="text-gray-400 mt-1 mr-2 flex-shrink-0" />
-                  <div>
-                    {unidade.telefones.map((tel, idx) => (
-                      <p key={idx} className="text-gray-700 text-sm">{tel}</p>
-                    ))}
-                  </div>
-                </div>
-                
-                {unidade.email && (
-                  <div className="flex items-start">
-                    <FaEnvelope className="text-gray-400 mt-1 mr-2 flex-shrink-0" />
-                    <p className="text-gray-700 text-sm">{unidade.email}</p>
-                  </div>
-                )}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {unidades.map((unidade) => (
+        <div 
+          key={unidade.id} 
+          className={`bg-white rounded-xl shadow-lg border ${unidade.tipo === 'matriz' ? 'border-blue-300' : 'border-gray-200'} p-6`}
+        >
+          <div className="flex items-center mb-4">
+            <div className={`w-10 h-10 rounded-full ${unidade.tipo === 'matriz' ? 'bg-blue-100' : 'bg-green-100'} flex items-center justify-center mr-3 flex-shrink-0`}>
+              {unidade.tipo === 'matriz' ? (
+                <FaBuilding className="text-blue-600" />
+              ) : (
+                <FaMapMarkerAlt className="text-green-600" />
+              )}
+            </div>
+            <h3 className="font-bold text-gray-900 text-sm">{unidade.nome}</h3>
+          </div>
+          
+          <div className="space-y-3">
+            <div className="flex items-start">
+              <FaMapMarkerAlt className="text-gray-400 mt-1 mr-2 flex-shrink-0" />
+              <p className="text-gray-700 text-sm break-words">{unidade.endereco}</p>
+            </div>
+            
+            <div className="flex items-start">
+              <FaPhone className="text-gray-400 mt-1 mr-2 flex-shrink-0" />
+              <div className="min-w-0">
+                {unidade.telefones.map((tel, idx) => (
+                  <p key={idx} className="text-gray-700 text-sm truncate">{tel}</p>
+                ))}
               </div>
             </div>
-          ))}
+            
+            {unidade.email && (
+              <div className="flex items-start">
+                <FaEnvelope className="text-gray-400 mt-1 mr-2 flex-shrink-0" />
+                <a 
+                  href={`mailto:${unidade.email}`}
+                  className="text-blue-600 hover:text-blue-800 text-sm break-all hover:underline truncate block"
+                  title={unidade.email}
+                >
+                  {unidade.email}
+                </a>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
+  </div>
+</div>
   );
 };
 

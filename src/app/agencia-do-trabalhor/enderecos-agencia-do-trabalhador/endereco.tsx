@@ -92,10 +92,10 @@ export default function AgenciasTrabalho() {
       
         <div className="mt-12 mb-8  ">
           <div className="text-center max-w-3xl mx-auto">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              Sobre as Agências do Trabalhador
-            </h3>
-            <p className="text-gray-600">
+              <h2 className="text-3xl  font-bold  text-gray-900 mb-12">
+            Sobre as Agências do Trabalhador
+          </h2>
+            <p className="text-black">
              É uma Unidade técnica subordinada à Secretaria Executiva de Trabalho, Qualificação e Empreendedorismo da Prefeitura do Jaboatão dos Guararapes, em parceria com o Ministério do Trabalho. É responsável pela execução do conjunto de ações e serviços do Sistema Público de Emprego, Trabalho e Renda, cujo objetivo é facilitar o acesso dos trabalhadores ao mercado de trabalho contribuindo com a redução do tempo médio de desemprego.
             </p>
           </div>

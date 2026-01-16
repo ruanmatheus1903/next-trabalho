@@ -59,7 +59,7 @@ const navigation: NavItem[] = [
         href: "/areas-de-atuacao/trabalho-e-intermediacao-de-mao-de-obra"
       },
       {
-        name: "ECONOMIA SOLIDÁRIA", href: "#",
+        name: "ECONOMIA SOLIDÁRIA", href: "/areas-de-atuacao/economia-solidaria",
         submenu: [
           { name: "SEMINÁRIO TEMÁTICO", href: "#" },]
       },
