@@ -80,9 +80,6 @@ export default function ServicosEmpregador() {
           <h1 className="text-4xl md:text-5xl font-bold text-white relative z-10 tracking-tight">
             <span className="drop-shadow-xl">OFERTA DE VAGAS</span>
           </h1>
-          <p className="text-white/90 mt-3 text-lg md:text-xl font-light relative z-10">
-            Portal Emprega Brasil - Ministério do Trabalho
-          </p>
         </div>
 
         {/* WAVES */}

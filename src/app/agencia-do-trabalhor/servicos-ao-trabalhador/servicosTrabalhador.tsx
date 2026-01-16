@@ -545,36 +545,6 @@ export default function ServicosPage() {
             </div>
           </section>
         )}
-
-        {/* Rodapé Informativo */}
-        <div className="mt-12 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-8 border border-blue-200">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl font-bold text-blue-900 mb-2">
-                Precisa de mais informações?
-              </h3>
-              <p className="text-gray-700">
-                Entre em contato conosco ou visite uma de nossas agências.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="/#agencias"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-              >
-                <FaMapMarkerAlt className="mr-2" />
-                Encontrar Agências
-              </a>
-              <a
-                href="/#faleconosco"
-                className="inline-flex items-center px-6 py-3 bg-white text-blue-600 border border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-              >
-                <FaPhoneAlt className="mr-2" />
-                Fale Conosco
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Estilos CSS */}
