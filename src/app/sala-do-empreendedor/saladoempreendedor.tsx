@@ -1,352 +1,313 @@
 "use client";
-import { ChevronDown } from "lucide-react";
-import { RiHomeOfficeFill } from "react-icons/ri";
-import Noticias from "../components/Noticias"
+import { useState } from "react";
+import { FaMapMarkerAlt, FaPhone, FaClock, FaExternalLinkAlt } from "react-icons/fa";
 
-export default function AboutSection() {
+// Dados dos endereços das agências
+const agencias = [
+  {
+    id: 1,
+    nome: "JABOATÃO CENTRO REGIONAL 01",
+    endereco: "Av. Barão de Lucena, S/N",
+    telefones: ["(81) 3482-5487 /", "(81) 3482-5494 /", "(81) 3482-5384"],
+    horario: "Segunda à sexta - 08 às 14 horas",
+    bairro: "Jaboatão Centro",
+    cidade: "Jaboatão dos Guararapes",
+    coordenadas: { lat: -8.1122, lng: -34.9996 },
+    googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7899.773549570481!2d-35.028494!3d-8.11301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1d375ceed533%3A0xd837a99c84e4e9ab!2sAv.%20Bar%C3%A3o%20de%20Lucena%20-%20Jaboat%C3%A3o%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1768586028120!5m2!1spt-BR!2sus" 
+  },
+  {
+    id: 2,
+    nome: "CAVALEIRO REGIONAL 02",
+    endereco: "Praça Severina Rita Coelho, 20 - Cavaleiro",
+    telefones: ["(81) 3455-8498"],
+    horario: "Segunda à sexta - 08 às 14 horas",
+    bairro: "Cavaleiro",
+    cidade: "Jaboatão dos Guararapes",
+    googleMapsEmbedUrl:"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7900.14514367345!2d-34.972839!3d-8.094082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1c480107fa67%3A0xae007c7be5738e7b!2sPra%C3%A7a%20Severina%20Rita%20Coelho%2C%2020%20-%20Cavaleiro%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054250-603%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1768586367425!5m2!1spt-BR!2sus" 
+  },
+  {
+    id: 3,
+    nome: "CURADO REGIONAL 03",
+    endereco: "Rua Leonardo da Vinci, 28 - Curado II",
+    telefones: [" (81) 3255-2412"],
+    horario: "Segunda à sexta - 08 às 14 horas",
+    bairro: "Curado",
+    cidade: "Jaboatão dos Guararapes",
+    googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7900.426170525221!2d-34.997379!3d-8.079738!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1c8bdb9eb44d%3A0x1a6ea667f86fc180!2sR.%20Leonardo%20da%20Vinci%2C%2028%20-%20Curado%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054220-000%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1768586812507!5m2!1spt-BR!2sus"
+  },
+  {
+    id: 4,
+    nome: "MURIBECA REGIONAL 04",
+    endereco: "Eixo da integração, 3033 - Muribeca",
+    telefones: ["(81) 3377-5517"],
+    horario: "Segunda à sexta - 08 às 14 horas",
+    bairro: "Muribeca",
+    cidade: "Jaboatão dos Guararapes",
+    googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.325456016462!2d-35.0096!3d-8.1422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMDgnMzEuOSJTIDM1wrAwMCczNC42Ilc!5e0!3m2!1spt-BR!2sbr!4v1640000000000!5m2!1spt-BR!2sbr"
+  },
+  {
+    id: 6,
+    nome: "PRAIAS REGIONAL 06",
+    endereco: "AV. Presidente Kennedy Nº 578",
+    telefones: ["(81) 3469-5476"],
+    horario: "Segunda à sexta - 08 às 14 horas",
+    bairro: "Candeias",
+    cidade: "Jaboatão dos Guararapes",
+    googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7898.23857584546!2d-34.920662!3d-8.190737!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae10e342157fb%3A0x92fd23be1da80efc!2sAv.%20Pres.%20Kennedy%2C%20578%20-%20Candeias%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054440-411%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1768587312756!5m2!1spt-BR!2sus" 
+  }
+];
 
-  // Função para rolagem suave
-  const handleScroll = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const nextSection = document.getElementById("proxima-secao");
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
+export default function AgenciasTrabalho() {
+  const [agenciaSelecionada, setAgenciaSelecionada] = useState(1);
+
+  const agenciaAtiva = agencias.find(ag => ag.id === agenciaSelecionada);
+
+  // Função para abrir o Google Maps em nova aba
+  const abrirNoMaps = (endereco: string, cidade: string) => {
+    const enderecoFormatado = `${endereco}, ${cidade}`;
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoFormatado)}`;
+    window.open(url, '_blank');
   };
 
   return (
-    <>
-      {/* Seção O QUE É? com gradiente */}
-      <section className="overflow-hidden">
-        <div className="relative rounded-b-[50px] py-8 md:py-12 text-center flex flex-col items-center px-4 md:px-6 min-h-[600px] bg-gradient-to-b from-white via-blue-100 to-blue-400 text-blue-900">
-          <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <div className="p-4 md:p-8">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">O QUE É?</h2>
-              <span className="block w-[80px] md:w-[100px] h-1 bg-blue-900 mt-2 mx-auto"></span>
-              <p className="text-base md:text-lg text-blue-900 text-justify mt-4">
-                A Sala do Empreendedor visa centralizar os serviços de atendimento de forma presencial e pela rede mundial de computadores, fornecendo-lhe informações e instrumentos, de forma integrada e consolidada, de modo a agilizar e simplificar os procedimentos para instalação e desenvolvimento de seus empreendimentos.
-                <br /><br />
-                A sala tem uma importância bastante relevante para minimizar o tempo de atendimento e economia sobre os deslocamentos para os empreendedores que necessitam de viabilizar seus negócios. O local é um ponto de encontro para negócios, orientações e informações para empreendedores. A sala do Empreendedor também pode servi de encontro para fechamento de negócios.
-              </p>
-            </div>
+    <section id="agencias" className="py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+      {/* Informação adicional simples */}
+    <div className="mt-12 mb-8">
+  <div className="text-center max-w-4xl mx-auto">
+    <div className="rounded-xl p-6 md:p-8   ">
+      
+      <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+        A Sala do Empreendedor é uma parceria do Sebrae com as prefeituras para 
+        incentivar a formalização de negócios informais. Além disso, o micro e 
+        pequeno empreendedor poderá ser orientado sobre o programa municipal de 
+        compras governamentais, linhas de financiamento, concessão de alvará, 
+        tributações, promoções de palestras e oficinas para capacitação, entre 
+        outros assuntos.
+      </p>
 
-            <div className="p-4 md:p-8">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">QUAL O SEU OBJETIVO?</h2>
-              <span className="block w-[80px] md:w-[100px] h-1 bg-blue-900 mt-2 mx-auto"></span>
-              <p className="text-base md:text-lg text-blue-900 text-justify mt-4">
-                O objetivo da Sala do Empreendedor é atender de forma rápida e eficiente e que seja o mais próximo do local do estabelecimento do empreendedor, alcançado assim uma agilidade nas informações e menor tempo e custo econômico, com isto a Prefeitura consegue oferecer política pública que atenda ás necessidades primárias, propiciando o desenvolvimento empresarial.
-              </p>
-            </div>
-
-            <div className="p-4 md:p-8">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">QUAL O PÚBLICO BENEFICIADO?</h2>
-              <span className="block w-[80px] md:w-[100px] h-1 bg-blue-900 mt-2 mx-auto"></span>
-              <p className="text-base md:text-lg text-blue-900 text-justify mt-4">
-                No Município do Jaboatão dos Guararapes, tem hoje cerca de 21Mil MEIs, micro empreendedores individuais - MEI, fora as micro empresas - ME e empresas de pequeno porte - EPP , portanto, este público alvo será atendido na Sala do Empreendedor, justificado assim a criação deste espaço tornando uma referência local.
-              </p>
-            </div>
-          </div>
-
-          {/* Botão de rolagem suave */}
-          <div className="w-fit mx-auto mt-4 md:mt-6">
-            <button
-              onClick={handleScroll}
-              className="border border-blue-900 text-blue-900 bg-transparent px-4 py-2 text-sm font-medium flex items-center justify-center gap-2 hover:bg-blue-900 hover:text-white transition duration-300">
-              <ChevronDown size={20} />
-            </button>
-          </div>
+      <div className="mb-6">
+        <h4 className="text-xl py-5 mb-10 font-semibold text-gray-800 mb-4">
+          Na Sala do Empreendedor você tem os seguintes serviços:
+        </h4>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ul className="space-y-2">
+            {[
+              "Formalização",
+              "Certificado MEI", 
+              "Comprovante de CNPJ",
+              "Impressão de DAS",
+             
+            ].map((item, index) => (
+              <li key={index} className="flex items-start">
+                <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+          
+          <ul className="space-y-2">
+            {[
+               "Declaração de faturamento",
+              "Certidão de cancelamento (baixa)",
+              "Parcelamento de débitos (MEI)", 
+              "Palestras e oficinas para capacitação",
+            
+            ].map((item, index) => (
+              <li key={index} className="flex items-start">
+                <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-      </section>
+      </div>
 
-      {/* Seção SERVIÇOS DISPONIBILIZADOS NAS SALAS DO EMPREENDEDOR com gradiente */}
-      <section className="overflow-hidden">
-        <div className="relative py-12 md:py-20 px-4 md:px-6 bg-gradient-to-b from-white via-blue-100 to-blue-400 text-blue-900">
-          <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
-            <div id="proxima-secao" className="p-4 md:p-8">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">SERVIÇOS DISPONIBILIZADOS NAS SALAS DO EMPREENDEDOR</h2>
-              <span className="block w-[80px] md:w-[100px] h-1 bg-blue-900 mt-2 mx-auto"></span>
-              <div className="text-base md:text-lg text-blue-900 text-left md:text-justify font-bold mt-4 space-y-2">
-                <p>- Planejamento de um novo negócio</p>
-                <p>- Formalização de MEI</p>
-                <p>- Alteração, declaração anual, impressão de boletos e baixa para o MEI</p>
-                <p>- Gerenciamento de Empresa</p>
-                <p>- Como vender para órgão publico</p>
-                <p>- Custos de capacitação empresarial</p>
-                <p>- Controles integrado de atendimento ao público</p>
-                <p>- Atendimento com Consultores CRC (conselho de contadores)</p>
-                <p>- Parceria com entidades financeiras (bancos)</p>
-                <p>- Parceiras com entidades de ensino (faculdades)</p>
-                <p>- Parcerias com entidades de classe (comercio e indústria)</p>
-                <p>- Orientação ao Programa Municipal de Compras Governamentais</p>
-                <p>- Atendimento de serviços do INSS e Auxilio de acesso ao Portal de Licenciamento Integrado.</p>
-              </div>
-            </div>
-          </div>
-          <div className="w-fit mx-auto mt-4 md:mt-6">
-            <button
-              onClick={handleScroll}
-              className="border border-blue-900 text-blue-900 bg-transparent px-4 py-2 text-sm font-medium flex items-center justify-center gap-2 hover:bg-blue-900 hover:text-white transition duration-300">
-              <ChevronDown size={20} />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white text-blue-900">
-        <div className="text-center py-8 md:py-10 bg-[#003470]">
-          <h1 className="text-3xl md:text-4xl font-bold text-white">NOTÍCIAS</h1>
-        </div>
-        {/* DIVISOR DE FORMA*/}
-        <div className="relative w-full">
-          <svg
-            width="100%"
-            viewBox="0 0 2000 96"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.33"
-              d="M946 62.22C538.2 152.254 419.8 27.5523 305.4 62.22C132 115.037 0 54.4708 0 54.4708V-6.40161H2000V54.4708C2000 54.4708 1875.8 81.0833 1810.2 84.3462C1744.6 87.711 1684.6 71.8046 1658.6 61.8122C1612 44.1724 1490.6 2.46924 1389.8 -1.60931C1289 -5.68786 984.8 53.757 946 62.22Z"
-              fill="#003470"
-            />
-            <path
-              opacity="0.66"
-              d="M1468 62.22C1377 62.22 1313.6 38.5644 1209.8 22.3522C1152.6 13.4813 909.2 12.0538 701.8 62.22C494.4 112.386 518.4 27.1445 403.4 62.22C231.4 114.222 0 34.18 0 34.18V-6.40161H2000V30.8152C2000 30.8152 1943.6 11.9519 1815.8 11.9519C1620.4 12.0538 1551.4 62.22 1468 62.22Z"
-              fill="#003470"
-            />
-            <path
-              d="M1532.2 23.0659C1132.2 -35.5633 1000.2 89.8522 742 42.9489C484 -4.56626 484 -0.895566 369.6 14.6029C256 30.1014 264.6 39.3801 179.8 47.1294C57.2 58.5493 0 -6.40161 0 -6.40161H2000C2000 -6.40161 1980.2 35.3016 1832.8 42.643C1685.4 49.9844 1659.2 41.5214 1532.2 23.0659Z"
-              fill="#003470"
-            />
+      <div className="bg-white rounded-lg p-4 border border-blue-200">
+        <p className="text-gray-800 mb-3">
+          Para mais informações sobre empreendedorismo acesse o site oficial do 
+          Portal do Empreendedor:
+        </p>
+        <a 
+          href="https://www.portaldoempreendedor.gov.br" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium hover:underline"
+        >
+          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
           </svg>
-        </div>
-
-      < Noticias/>
-
-      </section>
-
-      <section className="bg-white text-blue-900">
-    <div className="text-center py-8 md:py-10 bg-[#003470]">
-      <h1 className="text-3xl md:text-4xl font-bold text-white">LOCALIZAÇÃO DAS SALAS DO EMPREENDEDOR
-        <span className="block w-[150px] md:w-[200px] h-1 bg-white mt-2 mx-auto"></span> </h1>
-    </div>
-
-    <div className="w-full max-w-[2000px] mx-auto">
-      {/* Card 1 + Iframe 1 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-[radial-gradient(circle,#549FCA,#224276)] overflow-hidden border-b border-black hover:shadow-2xl transition-all duration-300 h-[300px] md:h-[350px] flex flex-col group">
-          {/* Conteúdo do Card 1 */}
-          <div className="p-4 md:p-6 flex-grow flex flex-col items-center justify-center text-center relative h-full">
-            <div className="group-hover:opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center h-full">
-              <RiHomeOfficeFill className="text-4xl md:text-5xl mb-3 md:mb-4 text-white" />
-              <h3 className="text-xl md:text-2xl font-bold text-white">REGIONAL 1<br />JABOATÃO CENTRO</h3>
-            </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 bg-[radial-gradient(circle,#549FCA,#224276)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
-              <h3 className="text-xl md:text-2xl lg:text-[30px] font-bold mb-3 md:mb-4 text-center">SALA DO EMPREENDEDOR REGIONAL 1</h3>
-              <div className="text-sm md:text-base">
-                <p className="text-center">
-                  AV. BARÃO DE LUCENA, S/N - AGÊNCIA DO TRABALHADOR<br />
-                  JABOATÃO CENTRO<br />
-                  FONE: (81) 9.9939-1923<br />
-                  SEGUNDA À SEXTA - 08 ÀS 14 HORAS
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="overflow-hidden border-b border-black h-[300px] md:h-[350px] w-auto">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.8958765707034!2d-35.017880624109445!3d-8.112083781168785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1d166b17473f%3A0x2254e2bb16fbce0c!2sAg%C3%AAncia%20do%20Trabalhador%20do%20Jaboat%C3%A3o!5e0!3m2!1spt-BR!2sbr!4v1743188656896!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            title="Mapa Sala do Empreendedor 1"
-          ></iframe>
-        </div>
-      </div>
-
-      {/* Card 2 + Iframe 2 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-[radial-gradient(circle,#549FCA,#224276)] overflow-hidden border-b border-black hover:shadow-2xl transition-all duration-300 h-[300px] md:h-[350px] flex flex-col group">
-          {/* Conteúdo do Card 2 */}
-          <div className="p-4 md:p-6 flex-grow flex flex-col items-center justify-center text-center relative h-full">
-            <div className="group-hover:opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center h-full">
-              <RiHomeOfficeFill className="text-4xl md:text-5xl mb-3 md:mb-4 text-white" />
-              <h3 className="text-xl md:text-2xl font-bold text-white">REGIONAL 2<br />CAVALEIRO</h3>
-            </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 bg-[radial-gradient(circle,#549FCA,#224276)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
-              <h3 className="text-xl md:text-2xl lg:text-[30px] font-bold mb-3 md:mb-4 text-center">SALA DO EMPREENDEDOR REGIONAL 2</h3>
-              <div className="text-sm md:text-base">
-                <p className="text-center">
-                  RUA SEVERINO MONTEIRO, S/N - EM FRENTE AO BANCO DO BRASIL<br />
-                  CAVALEIRO<br />
-                  FONE: (81) 3455-8498<br />
-                  SEGUNDA À SEXTA - 08 ÀS 14 HORAS
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="overflow-hidden border-b border-black h-[300px] md:h-[350px] w-auto">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1660.8152262534454!2d-34.9713016089866!3d-8.09061394185776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1c38e7cae8df%3A0xf85a6438fe92ed5b!2sR.%20Severino%20Monteiro%20-%20Cavaleiro%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054250-538!5e0!3m2!1spt-BR!2sbr!4v1743188833313!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            title="Mapa Sala do Empreendedor 2"
-          ></iframe>
-        </div>
-      </div>
-
-      {/* Card 3 + Iframe 3 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-[radial-gradient(circle,#549FCA,#224276)] overflow-hidden border-b border-black hover:shadow-2xl transition-all duration-300 h-[300px] md:h-[350px] flex flex-col group">
-          {/* Conteúdo do Card 3 */}
-          <div className="p-4 md:p-6 flex-grow flex flex-col items-center justify-center text-center relative h-full">
-            <div className="group-hover:opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center h-full">
-              <RiHomeOfficeFill className="text-4xl md:text-5xl mb-3 md:mb-4 text-white" />
-              <h3 className="text-xl md:text-2xl font-bold text-white">REGIONAL 3<br />CURADO</h3>
-            </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 bg-[radial-gradient(circle,#549FCA,#224276)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
-              <h3 className="text-xl md:text-2xl lg:text-[30px] font-bold mb-3 md:mb-4 text-center">SALA DO EMPREENDEDOR REGIONAL 3</h3>
-              <div className="text-sm md:text-base">
-                <p className="text-center">
-                  RUA 02, S/N - ANEXO DA POLICÍNICA<br />
-                  CURADO IV<br />
-                  FONE: (81) 9.9529-6266<br />
-                  SEGUNDA À SEXTA - 08 ÀS 14 HORAS
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="overflow-hidden border-b border-black h-[300px] md:h-[350px] w-auto">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1975.1467531702265!2d-34.994284!3d-8.071517!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1c7d77bea29f%3A0xb97221f7ba092b47!2sPoliclinica%20Manoel%20Calheiros!5e0!3m2!1spt-BR!2sus!4v1743188869159!5m2!1spt-BR!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            title="Mapa Sala do Empreendedor 3"
-          ></iframe>
-        </div>
-      </div>
-
-      {/* Card 4 + Iframe 4 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-[radial-gradient(circle,#549FCA,#224276)] overflow-hidden border-b border-black hover:shadow-2xl transition-all duration-300 h-[300px] md:h-[350px] flex flex-col group">
-          {/* Conteúdo do Card 4 */}
-          <div className="p-4 md:p-6 flex-grow flex flex-col items-center justify-center text-center relative h-full">
-            <div className="group-hover:opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center h-full">
-              <RiHomeOfficeFill className="text-4xl md:text-5xl mb-3 md:mb-4 text-white" />
-              <h3 className="text-xl md:text-2xl font-bold text-white">REGIONAL 4<br />MURIBECA</h3>
-            </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 bg-[radial-gradient(circle,#549FCA,#224276)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
-              <h3 className="text-xl md:text-2xl lg:text-[30px] font-bold mb-3 md:mb-4 text-center">SALA DO EMPREENDEDOR REGIONAL 4</h3>
-              <div className="text-sm md:text-base">
-                <p className="text-center">
-                  EIXO DA INTEGRAÇÃO, 3033 - MURIBECA<br />
-                  SEGUNDA À SEXTA - 08 ÀS 14 HORAS
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="overflow-hidden border-b border-black h-[300px] md:h-[350px] w-auto">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1974.7268151969408!2d-34.967672!3d-8.156967!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae2142cdf0eb9%3A0xce5e94b12cd8a72e!2sEstr.%20Eixo%20da%20Integra%C3%A7%C3%A3o%2C%203033%20-%20Muribeca%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054352-310%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1743188936265!5m2!1spt-BR!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            title="Mapa Sala do Empreendedor 4"
-          ></iframe>
-        </div>
-      </div>
-
-      {/* Card 5 + Iframe 5 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-[radial-gradient(circle,#549FCA,#224276)] overflow-hidden border-b border-black hover:shadow-2xl transition-all duration-300 h-[300px] md:h-[350px] flex flex-col group">
-          {/* Conteúdo do Card 5 */}
-          <div className="p-4 md:p-6 flex-grow flex flex-col items-center justify-center text-center relative h-full">
-            <div className="group-hover:opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center h-full">
-              <RiHomeOfficeFill className="text-4xl md:text-5xl mb-3 md:mb-4 text-white" />
-              <h3 className="text-xl md:text-2xl font-bold text-white">REGIONAIS 5 E 7<br />PRAZERES E GUARARAPES</h3>
-            </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 bg-[radial-gradient(circle,#549FCA,#224276)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
-              <h3 className="text-xl md:text-2xl lg:text-[30px] font-bold mb-3 md:mb-4 text-center">SALAS DO EMPREENDEDOR REGIONAIS 5 E 7</h3>
-              <div className="text-sm md:text-base">
-                <p className="text-center">
-                  AV. BARRETO DE MENEZES, S/N - 1°ANDAR - MERCADO DAS MANGUEIRAS<br />
-                  PRAZERES<br />
-                  FONE: (81) 9.9142-5208<br />
-                  SEGUNDA À SEXTA - 08 ÀS 14 HORAS
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="overflow-hidden border-b border-black h-[300px] md:h-[350px] w-auto">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1974.7076627281729!2d-34.927459!3d-8.160843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1896974b6dd%3A0x2066fc1930fbde19!2sMercado%20das%20Mangueiras!5e0!3m2!1spt-BR!2sus!4v1743188967999!5m2!1spt-BR!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            title="Mapa Sala do Empreendedor 5 e 7"
-          ></iframe>
-        </div>
-      </div>
-
-      {/* Card 6 + Iframe 6 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-[radial-gradient(circle,#549FCA,#224276)] overflow-hidden border-b border-black hover:shadow-2xl transition-all duration-300 h-[300px] md:h-[350px] flex flex-col group">
-          {/* Conteúdo do Card 6 */}
-          <div className="p-4 md:p-6 flex-grow flex flex-col items-center justify-center text-center relative h-full">
-            <div className="group-hover:opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center h-full">
-              <RiHomeOfficeFill className="text-4xl md:text-5xl mb-3 md:mb-4 text-white" />
-              <h3 className="text-xl md:text-2xl font-bold text-white">REGIONAL 6<br />PRAIAS</h3>
-            </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 bg-[radial-gradient(circle,#549FCA,#224276)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
-              <h3 className="text-xl md:text-2xl lg:text-[30px] font-bold mb-3 md:mb-4 text-center">SALA DO EMREENDEDOR REGIONAL 6</h3>
-              <div className="text-sm md:text-base">
-                <p className="text-center">
-                  AV. PRESIDENTE KENNEDY Nº 578 - PRÉDIO DA REGIONAL VI<br />
-                  PIEDADE<br />
-                  FONE: (81) 9.9339-5057<br />
-                  SEGUNDA À SEXTA - 08 ÀS 14 HORAS
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="overflow-hidden border-b border-black h-[300px] md:h-[350px] w-auto">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1974.559643961365!2d-34.920662!3d-8.190737!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae10e342157fb%3A0x92fd23be1da80efc!2sAv.%20Pres.%20Kennedy%2C%20578%20-%20Candeias%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054440-411%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1743189007109!5m2!1spt-BR!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            title="Mapa Sala do Empreendedor 6"
-          ></iframe>
-        </div>
+          www.portaldoempreendedor.gov.br
+        </a>
       </div>
     </div>
-  </section>
-    </>
+  </div>
+</div>
+
+        {/* Layout Principal: Cards + Mapa */}
+        <div className="flex py-20 border-t border-gray-300 flex-col lg:flex-row gap-8">
+          {/* Coluna dos Cards (Esquerda) */}
+          <div className="lg:w-1/2">
+            <div className="space-y-4">
+              {agencias.map((agencia) => (
+                <div
+                  key={agencia.id}
+                  className={`border rounded-lg p-4 cursor-pointer transition-all ${
+                    agenciaSelecionada === agencia.id 
+                      ? 'border-blue-500 bg-blue-50 shadow-md' 
+                      : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
+                  }`}
+                  onClick={() => setAgenciaSelecionada(agencia.id)}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        {agencia.nome}
+                      </h3>
+                      <div className="text-sm text-gray-600 space-y-1">
+                        <div className="flex items-start">
+                          <FaMapMarkerAlt className="w-4 h-4 mr-2 mt-0.5 text-gray-400 flex-shrink-0" />
+                          <span>{agencia.endereco} - {agencia.bairro}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <FaPhone className="w-4 h-4 mr-2 text-gray-400 flex-shrink-0" />
+                          <div className="flex gap-2">
+                            {agencia.telefones.map((tel, idx) => (
+                              <a 
+                                key={idx}
+                                href={`tel:${tel}`}
+                                className="text-blue-600 hover:text-blue-800 hover:underline"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {tel}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex items-center">
+                          <FaClock className="w-4 h-4 mr-2 text-gray-400 flex-shrink-0" />
+                          <span>{agencia.horario}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Indicador de seleção */}
+                    {agenciaSelecionada === agencia.id && (
+                      <div className="ml-4 flex items-center">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      abrirNoMaps(agencia.endereco, agencia.cidade);
+                    }}
+                    className="mt-3 text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center"
+                  >
+                    <FaExternalLinkAlt className="w-3 h-3 mr-1" />
+                    Ver rota no Google Maps
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Coluna do Mapa (Direita) */}
+          <div className="lg:w-1/2">
+            <div className="sticky top-4">
+              {/* Card do Mapa */}
+              <div className="border border-gray-200 rounded-lg overflow-hidden shadow-lg">
+                {/* Header do Mapa */}
+                <div className="bg-gray-900 text-white p-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <FaMapMarkerAlt className="w-5 h-5 mr-2" />
+                      <h3 className="font-semibold">Localização da Agência</h3>
+                    </div>
+                    <span className="text-sm bg-blue-500 px-2 py-1 rounded">
+                      {agenciaAtiva?.bairro}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Mapa Embed do Google Maps */}
+                <div className="h-96 bg-gray-100">
+                  {agenciaAtiva?.googleMapsEmbedUrl ? (
+                    <iframe
+                      src={agenciaAtiva.googleMapsEmbedUrl}
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`Mapa da ${agenciaAtiva.nome}`}
+                    />
+                  ) : (
+                    <div className="h-full flex items-center justify-center text-gray-500">
+                      <div className="text-center">
+                        <FaMapMarkerAlt className="w-12 h-12 mx-auto mb-2 text-gray-300" />
+                        <p>Carregando mapa...</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Informações da Agência Selecionada */}
+                <div className="p-4 bg-white border-t border-gray-200">
+                  <div className="mb-3">
+                    <h4 className="font-bold text-gray-900 text-lg mb-1">
+                      {agenciaAtiva?.nome}
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      {agenciaAtiva?.endereco} • {agenciaAtiva?.bairro}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium mb-1">Horário</p>
+                      <p className="font-medium text-gray-900">{agenciaAtiva?.horario}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium mb-1">Telefone</p>
+                      {agenciaAtiva?.telefones.map((tel, idx) => (
+                        <a 
+                          key={idx}
+                          href={`tel:${tel}`}
+                          className="block font-medium text-blue-600 hover:text-blue-800"
+                        >
+                          {tel}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => abrirNoMaps(agenciaAtiva?.endereco || '', agenciaAtiva?.cidade || '')}
+                    className="w-full py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
+                  >
+                    <FaExternalLinkAlt className="w-4 h-4 mr-2" />
+                    Abrir no Google Maps
+                  </button>
+
+                  <div className="mt-3 text-xs text-gray-500 text-center">
+                    Arraste e clique no mapa para explorar a região
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

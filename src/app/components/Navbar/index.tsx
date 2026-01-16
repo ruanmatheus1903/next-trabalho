@@ -48,7 +48,7 @@ const navigation: NavItem[] = [
   },
    {
     name: "SALA DO EMPREENDEDOR",
-    href: "#",
+    href: "/sala-do-empreendedor",
    },
   {
     name: "ÁREAS DE ATUAÇÃO",
